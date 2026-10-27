@@ -38,6 +38,23 @@ PAGES = [
 ]
 BUILDERS = ['legal_build.py', 'eval_build.py', 'rider_build.py', 'pages_build.py']
 
+# Where GitHub Pages serves the demo. Change to '/' if a custom domain is added.
+DEMO_BASE = '/forecast-farms-website/'
+
+NOT_FOUND = '''<main id="main">
+<section class="section" aria-labelledby="nf-title">
+  <div class="wrap">
+    <p class="eyebrow">Page not found</p>
+    <h1 id="nf-title" style="font-size:clamp(2.6rem,1.8rem + 3vw,4.25rem);line-height:1.04;letter-spacing:-.02em;font-weight:350;max-width:14ch">This page <em>isn’t here.</em></h1>
+    <p class="lede" style="margin-top:1.25rem">The page you’re looking for may have moved. Start from the homepage, or schedule an evaluation lesson.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="index.html">Go to the Homepage</a>
+      <a class="btn btn-ghost" href="contact-us.html">Schedule an Evaluation</a>
+    </div>
+  </div>
+</section>
+</main>'''
+
 FORM_LIVE = 'Thank you. Your request is in, and we will be in touch to schedule your evaluation lesson.'
 FORM_DEMO = ('Thank you. This is a preview site, so requests are not sent yet. '
              'To schedule now, call (540) 274-1541 or email info@forecastfarms.com.')
@@ -95,6 +112,12 @@ def build_docs():
 </html>
 '''
         open(os.path.join(DOCS, (path or 'index') + '.html'), 'w', encoding='utf-8').write(doc)
+    home = open(os.path.join(DOCS, 'index.html'), encoding='utf-8').read()
+    nf = re.sub(r'<main id="main">.*?</main>', lambda m: NOT_FOUND, home, count=1, flags=re.S)
+    nf = re.sub(r'<title>.*?</title>', '<title>Page Not Found | Forecast Farms</title>', nf, count=1)
+    nf = nf.replace('href="#evaluation"', 'href="contact-us.html"').replace('href="#top"', 'href="index.html"').replace('href="#main"', 'href="index.html"')
+    nf = nf.replace('<head>', f'<head>\n<base href="{DEMO_BASE}">', 1)
+    open(os.path.join(DOCS, '404.html'), 'w', encoding='utf-8').write(nf)
     if os.path.isdir(IMAGES):
         shutil.copytree(IMAGES, os.path.join(DOCS, 'images'),
                         ignore=shutil.ignore_patterns('.gitkeep', 'README*'))
