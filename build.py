@@ -7,7 +7,7 @@ Outputs:
 
 Run:  python build.py
 """
-import os, re, shutil, sys, runpy, tempfile
+import json, os, re, shutil, struct, sys, runpy, tempfile
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, BUILD = os.path.join(ROOT, 'src'), os.path.join(ROOT, 'src', 'build')
@@ -44,6 +44,12 @@ PAGES = [
 ]
 BUILDERS = ['legal_build.py', 'eval_build.py', 'rider_build.py', 'pages_build.py']
 
+# Phone-sized copies of each photo in images/ (NAME-800.jpg etc.), served with srcset.
+CARD_PHOTOS = ('schoolmaster-', 'denise-')
+WIDTHS = {'hero': (800, 1200), 'card': (600, 900)}
+SIZES = {'hero': '(min-width: 960px) 55vw, 100vw', 'card': '(min-width: 960px) 40vw, 100vw'}
+GHL_URLS = os.path.join(IMAGES, 'ghl-urls.json')
+
 # Where GitHub Pages serves the demo. Change to '/' if a custom domain is added.
 DEMO_BASE = '/forecast-farms-website/'
 
@@ -66,6 +72,70 @@ FORM_DEMO = ('Thank you. This is a preview site, so requests are not sent yet. '
              'To schedule now, call (540) 274-1541 or email info@forecastfarms.com.')
 
 
+def jpeg_width(path):
+    data = open(path, 'rb').read()
+    i = 2
+    while i < len(data) - 9:
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        if data[i + 1] in (0xC0, 0xC1, 0xC2):
+            return struct.unpack('>H', data[i + 7:i + 9])[0]
+        i += 2 + struct.unpack('>H', data[i + 2:i + 4])[0]
+    return None
+
+
+def kind(name):
+    return 'card' if name.startswith(CARD_PHOTOS) else 'hero'
+
+
+def masters():
+    if not os.path.isdir(IMAGES):
+        return []
+    return sorted(f[:-4] for f in os.listdir(IMAGES)
+                  if f.endswith('.jpg') and not re.search(r'-\d+\.jpg$', f))
+
+
+def make_sizes():
+    """Create missing phone-sized copies. Needs Pillow; without it pages fall back to the full-size photo."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    for name in masters():
+        src = os.path.join(IMAGES, name + '.jpg')
+        for w in WIDTHS[kind(name)]:
+            out = os.path.join(IMAGES, f'{name}-{w}.jpg')
+            if os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src):
+                continue
+            im = Image.open(src).convert('RGB')
+            if im.width <= w:
+                continue
+            im.resize((w, round(im.height * w / im.width)), Image.LANCZOS).save(
+                out, 'JPEG', quality=78, optimize=True, progressive=True)
+
+
+def responsive(html):
+    """Add srcset for photos in images/, then swap in GHL Media URLs from images/ghl-urls.json if present."""
+    def repl(m):
+        name = m.group(1)
+        full = os.path.join(IMAGES, name + '.jpg')
+        if not os.path.exists(full):
+            return m.group(0)
+        sets = [f'images/{name}-{w}.jpg {w}w' for w in WIDTHS[kind(name)]
+                if os.path.exists(os.path.join(IMAGES, f'{name}-{w}.jpg'))]
+        if not sets:
+            return m.group(0)
+        sets.append(f'images/{name}.jpg {jpeg_width(full)}w')
+        return f'<img src="images/{name}.jpg" srcset="{", ".join(sets)}" sizes="{SIZES[kind(name)]}"'
+    html = re.sub(r'<img src="images/([a-z0-9-]+)\.jpg"', repl, html)
+    if os.path.exists(GHL_URLS):
+        for f, url in json.load(open(GHL_URLS, encoding='utf-8')).items():
+            if url:
+                html = html.replace(f'images/{f}', url)
+    return html
+
+
 def build_ghl():
     out = tempfile.mkdtemp(prefix='ff-build-')
     os.environ['FF_ROOT'], os.environ['FF_OUT'] = ROOT, out
@@ -78,7 +148,8 @@ def build_ghl():
         for path, made, *_ in PAGES:
             name = (path or 'home') + '.html'
             src = os.path.join(SRC, 'home.html') if made is None else os.path.join(out, made)
-            shutil.copy(src, os.path.join(GHL, name))
+            html = open(src, encoding='utf-8').read()
+            open(os.path.join(GHL, name), 'w', encoding='utf-8').write(responsive(html))
     finally:
         shutil.rmtree(out, ignore_errors=True)
 
@@ -126,7 +197,7 @@ def build_docs():
     open(os.path.join(DOCS, '404.html'), 'w', encoding='utf-8').write(nf)
     if os.path.isdir(IMAGES):
         shutil.copytree(IMAGES, os.path.join(DOCS, 'images'),
-                        ignore=shutil.ignore_patterns('.gitkeep', 'README*'))
+                        ignore=shutil.ignore_patterns('.gitkeep', 'README*', '*.json'))
     build_archive()
     open(os.path.join(DOCS, '.nojekyll'), 'w').close()
 
@@ -151,6 +222,7 @@ def build_archive():
 
 
 if __name__ == '__main__':
+    make_sizes()
     build_ghl()
     build_docs()
     print(f'Built {len(PAGES)} pages into ghl/ and docs/')

@@ -17,6 +17,7 @@ def chrome(current=None,cta_href='/contact-us',cta_text=None,cta_external=False)
     if cta_text:
         header=header.replace('>Schedule an Evaluation Lesson</a>',f'>{cta_text}</a>').replace('>Schedule an Evaluation</a>',f'>{cta_text}</a>')
     footer=footer.replace('href="#top"','href="/"')
+    footer=footer.replace('href="#evaluation"',f'href="{cta_href}"{ext}')
     if current:
         a=f'<a href="/{current}">'
         if current in TRAINING:

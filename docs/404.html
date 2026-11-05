@@ -318,6 +318,16 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 .ff .form-status.is-done{color:var(--fg)}
 @media (min-width:560px){.ff .fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+.ff .actbar{display:none}
+@media (max-width:959px){
+.ff .actbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr);gap:.5rem;padding:.6rem max(.75rem,env(safe-area-inset-right)) calc(.6rem + env(safe-area-inset-bottom)) max(.75rem,env(safe-area-inset-left));background:color-mix(in srgb,var(--bg-paper) 95%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(42,24,40,.08);transform:translateY(110%);visibility:hidden;transition:transform .32s cubic-bezier(.2,.7,.2,1),visibility 0s linear .32s}
+.ff .actbar.is-on{transform:none;visibility:visible;transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.ff.nav-open .actbar{transform:translateY(110%);visibility:hidden}
+.ff .actbar a{display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:3rem;padding:0 .5rem;border:1px solid var(--line-strong);border-radius:2px;background:var(--bg-paper);color:var(--fg);font:600 .9rem/1.1 var(--sans);text-decoration:none;white-space:nowrap}
+.ff .actbar a svg{width:1.1rem;height:1.1rem;flex:none;color:var(--accent)}
+.ff .actbar .actbar-book{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+}
+@media (max-width:959px) and (prefers-reduced-motion:reduce){.ff .actbar,.ff .actbar.is-on{transition:none}}
 .ff .site-footer{background:var(--foot);color:var(--foot-fg);padding-block:clamp(3.5rem,6vw,5.5rem) 2rem}
 .ff .foot-grid{display:grid;gap:2.5rem 3rem}
 .ff .foot-grid>*{min-width:0}
@@ -457,6 +467,11 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
       </nav>
     </div>
   </div>
+  <nav class="actbar" aria-label="Quick actions">
+    <a class="actbar-book" href="contact-us.html">Book evaluation</a>
+    <a href="tel:+15402741541"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 3.4 5.2 1.6 1.6 0 0 1 5 3.5z"/></svg>Call</a>
+    <a href="sms:+15402741541"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10.5H9.5L5 19.5V16H4z"/></svg>Text</a>
+  </nav>
 </footer>
 </div>
 <script>
@@ -519,7 +534,15 @@ say(`Your request could not be sent. Please email ${EMAIL} or call ${PHONE}.`);r
 }
 done();
 });
-const boot=()=>{bleed();onScroll();pwSync();};
+const actbar=()=>{
+const bar=q('.ff .actbar');if(!bar||!('IntersectionObserver' in window))return;
+const lead=q('.ff main .hero-ctas')||q('.ff main .btn');const hits=new Set();let past=!lead;
+const set=()=>bar.classList.toggle('is-on',past&&hits.size===0);
+if(lead)new IntersectionObserver(([e])=>{past=!e.isIntersecting&&e.boundingClientRect.top<0;set();}).observe(lead);
+const io=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?hits.add(e.target):hits.delete(e.target));set();});
+document.querySelectorAll('.ff #evaluation,.ff #request,.ff .site-footer').forEach(x=>io.observe(x));
+};
+const boot=()=>{bleed();onScroll();pwSync();actbar();};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 window.addEventListener('load',boot);
 setTimeout(boot,1200);

@@ -81,11 +81,13 @@ The homepage's six photos are hosted in GHL Media Storage and linked from `src/h
 
 Landscape photos: at least 2000px wide. Portraits: at least 1200 × 1500px. Keep files under about 500 KB each so pages load quickly.
 
+**Phone-sized copies.** The build makes smaller copies of each photo (`NAME-800.jpg` and `NAME-1200.jpg`, or `-600`/`-900` for portraits) and tells browsers to use them on phones. Add only the full-size photo; the copies are created automatically (locally if Pillow is installed, and by the GitHub build).
+
 ## Going live on GoHighLevel
 
 1. Build in a new GHL website, not the live forecastfarms.com site (it already uses several of these paths).
-2. On each page: one full-width section with 0 padding, one Custom Code element, paste the whole file from `ghl/`.
-3. Photos in `images/` must be uploaded to GHL Media Storage and their links swapped into the source first, since GHL pages cannot read this repo.
+2. On each page: one full-width section with 0 padding, one Custom Code element, paste the whole file from `ghl/`. On a phone, check the sticky Book · Call · Text bar sits at the bottom of the screen (some GHL section settings can trap fixed elements).
+3. Photos: GHL pages cannot read this repo. Upload every file in `images/` (full-size and phone-sized copies) to GHL Media Storage, paste each URL into `images/ghl-urls.json` as `{"rider-training.jpg": "https://…", "rider-training-800.jpg": "https://…"}`, and rebuild. The build swaps the URLs into `ghl/`.
 4. Website settings, body (footer) tracking code: the GHL External Tracking script, once, site-wide.
 5. Custom fields: Rider Type, Horse Status, Jumping Level, Training Interest, Goals, SMS Consent.
 6. Test the forms on Home and Schedule an Evaluation; check Sites > Forms > Submissions > External Forms.
