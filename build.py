@@ -67,9 +67,9 @@ NOT_FOUND = '''<main id="main">
 </section>
 </main>'''
 
-FORM_LIVE = 'Thank you. Your request is in, and we will be in touch to schedule your evaluation lesson.'
-FORM_DEMO = ('Thank you. This is a preview site, so requests are not sent yet. '
-             'To schedule now, call (540) 274-1541 or email info@forecastfarms.com.')
+FORM_LIVE = 'Request sent. We’ll call or text to set a time for your evaluation lesson.'
+FORM_DEMO = ('This is a preview site, so requests aren’t sent yet. '
+             'To book now, call (540) 274-1541 or email info@forecastfarms.com.')
 
 
 def jpeg_width(path):
