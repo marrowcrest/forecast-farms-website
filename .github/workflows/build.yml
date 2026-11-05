@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/**'
       - 'images/**'
+      - 'archive/**'
       - 'build.py'
   workflow_dispatch:
 

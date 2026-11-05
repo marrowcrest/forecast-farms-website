@@ -16,6 +16,7 @@ Both are generated. **Edit `src/` or `images/`, never `docs/` or `ghl/` directly
 | `src/build/legal_copy.py` | Privacy Policy and Terms text |
 | `images/` | Photos for the demo, named after their slots (see below) |
 | `build.py` | Builds `ghl/` and `docs/` from `src/` |
+| `archive/v1/` | The original design, frozen. Published at `/v1/` on the demo for side-by-side review; never sent to `ghl/` |
 | `docs/` | Generated demo website (GitHub Pages) |
 | `ghl/` | Generated GoHighLevel files |
 
@@ -38,6 +39,13 @@ python build.py
 ```
 
 On GitHub, pushing changes to `src/`, `images/` or `build.py` rebuilds `docs/` and `ghl/` automatically (see `.github/workflows/build.yml`). The demo updates a minute or two later.
+
+## Earlier designs
+
+The original design (before the November 2026 refresh) is kept two ways:
+
+- **Viewable:** `archive/v1/` is published at `/forecast-farms-website/v1/`, with a bar on each page linking to the new version.
+- **Restorable:** the `v1-original` branch is the full site exactly as it was. To roll back, restore `src/` and `build.py` from that branch and rebuild.
 
 ## Pages
 

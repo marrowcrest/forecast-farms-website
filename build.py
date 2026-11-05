@@ -11,7 +11,13 @@ import os, re, shutil, sys, runpy, tempfile
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, BUILD = os.path.join(ROOT, 'src'), os.path.join(ROOT, 'src', 'build')
-GHL, DOCS, IMAGES = (os.path.join(ROOT, d) for d in ('ghl', 'docs', 'images'))
+GHL, DOCS, IMAGES, ARCHIVE = (os.path.join(ROOT, d) for d in ('ghl', 'docs', 'images', 'archive'))
+
+V1_BAR = ('<div style="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;'
+          'display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;align-items:center;'
+          'padding:10px 18px;background:#341C32;color:#EFEDEC;font:500 14px/1.3 system-ui,sans-serif;'
+          'border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100% - 32px)">'
+          'Original design (v1)<a href="../{page}" style="color:#F3E2F5">See the new design &rarr;</a></div>')
 
 # (path, builder output, page title, meta description)
 PAGES = [
@@ -121,7 +127,27 @@ def build_docs():
     if os.path.isdir(IMAGES):
         shutil.copytree(IMAGES, os.path.join(DOCS, 'images'),
                         ignore=shutil.ignore_patterns('.gitkeep', 'README*'))
+    build_archive()
     open(os.path.join(DOCS, '.nojekyll'), 'w').close()
+
+
+def build_archive():
+    """Publish frozen earlier designs from archive/<version>/ at docs/<version>/, with a bar linking back."""
+    if not os.path.isdir(ARCHIVE):
+        return
+    for ver in sorted(os.listdir(ARCHIVE)):
+        src = os.path.join(ARCHIVE, ver)
+        if not os.path.isdir(src):
+            continue
+        out = os.path.join(DOCS, ver)
+        os.makedirs(out)
+        for name in sorted(os.listdir(src)):
+            if not name.endswith('.html'):
+                continue
+            doc = open(os.path.join(src, name), encoding='utf-8').read()
+            doc = re.sub(r'<title>', f'<title>[{ver}] ', doc, count=1)
+            doc = doc.replace('<body>', '<body>\n' + V1_BAR.format(page=name).replace('(v1)', f'({ver})'), 1)
+            open(os.path.join(out, name), 'w', encoding='utf-8').write(doc)
 
 
 if __name__ == '__main__':

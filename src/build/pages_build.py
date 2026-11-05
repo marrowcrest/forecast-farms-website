@@ -63,7 +63,7 @@ def split(sid,cls,eyebrow,h2,lede,right,extra=''):
   </div>
 </section>'''
 
-def quote(text,name,place,cls='paper'):
+def quote(text,name,place,cls='deep'):
     return f'''<section class="section {cls}" aria-label="From a client">
   <div class="wrap">
     <figure class="quote-solo">

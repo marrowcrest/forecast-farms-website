@@ -237,7 +237,7 @@ body=f'''<main id="main">
   </div>
 </section>
 
-<section id="voice" class="section paper" aria-label="From a rider">
+<section id="voice" class="section deep" aria-label="From a rider">
   <div class="wrap">
     <figure class="quote-solo">
       <blockquote><p>“She pays close attention not only to the horse’s way of going but also the rider so the two are on the same page.”</p></blockquote>
