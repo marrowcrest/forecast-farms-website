@@ -47,6 +47,8 @@ The original design (before the November 2026 refresh) is kept two ways:
 - **Viewable:** `archive/v1/` is published at `/forecast-farms-website/v1/`, with a bar on each page linking to the new version.
 - **Restorable:** the `v1-original` branch is the full site exactly as it was. To roll back, restore `src/` and `build.py` from that branch and rebuild.
 
+**Previews.** `archive/preview/` holds a frozen copy of a page being redesigned, published at `/forecast-farms-website/preview/` with a bar back to the current site. The work itself lives on its own branch (currently `unslop`) until it is approved.
+
 ## Pages
 
 | Page | Path | Demo file | GHL file |

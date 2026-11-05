@@ -13,11 +13,17 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, BUILD = os.path.join(ROOT, 'src'), os.path.join(ROOT, 'src', 'build')
 GHL, DOCS, IMAGES, ARCHIVE = (os.path.join(ROOT, d) for d in ('ghl', 'docs', 'images', 'archive'))
 
-V1_BAR = ('<div style="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;'
-          'display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;align-items:center;'
-          'padding:10px 18px;background:#341C32;color:#EFEDEC;font:500 14px/1.3 system-ui,sans-serif;'
-          'border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100% - 32px)">'
-          'Original design (v1)<a href="../{page}" style="color:#F3E2F5">See the new design &rarr;</a></div>')
+# Frozen copies in archive/<folder>/ are published at /<folder>/ with a bar: (label, link text).
+FROZEN = {
+    'v1': ('Original design (v1)', 'See the current design'),
+    'preview': ('Preview of the new homepage design', 'See the current site'),
+}
+FROZEN_BAR = ('<style>.ffv-bar{{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;'
+              'display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;align-items:center;'
+              'padding:10px 18px;background:#2B1A2D;color:#fff;font:500 14px/1.3 system-ui,sans-serif;'
+              'border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100% - 32px);text-align:center}}'
+              '.ffv-bar a{{color:#EBD9EC}}@media (max-width:959px){{.ffv-bar{{position:relative;left:0;bottom:auto;transform:none;max-width:none;border-radius:0;box-shadow:none;padding:8px 16px;font-size:13px}}}}</style>'
+              '<div class="ffv-bar">{label}<a href="../{page}">{link}</a></div>')
 
 # (path, builder output, page title, meta description)
 PAGES = [
@@ -249,12 +255,18 @@ def build_archive():
             continue
         out = os.path.join(DOCS, ver)
         os.makedirs(out)
-        for name in sorted(os.listdir(src)):
-            if not name.endswith('.html'):
-                continue
+        names = [n for n in sorted(os.listdir(src)) if n.endswith('.html')]
+        label, link = FROZEN.get(ver, (f'Earlier design ({ver})', 'See the current design'))
+
+        def up(m):
+            return m.group(0) if m.group(2) in names else f'{m.group(1)}../{m.group(2)}'
+
+        for name in names:
             doc = open(os.path.join(src, name), encoding='utf-8').read()
             doc = re.sub(r'<title>', f'<title>[{ver}] ', doc, count=1)
-            doc = doc.replace('<body>', '<body>\n' + V1_BAR.format(page=name).replace('(v1)', f'({ver})'), 1)
+            doc = re.sub(r'(href=")([a-z0-9-]+\.html)', up, doc)
+            doc = re.sub(r'(["\s,])images/', r'\1../images/', doc)
+            doc = doc.replace('<body>', '<body>\n' + FROZEN_BAR.format(label=label, link=link, page=name), 1)
             open(os.path.join(out, name), 'w', encoding='utf-8').write(doc)
 
 
