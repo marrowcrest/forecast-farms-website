@@ -116,7 +116,7 @@ body=f'''<main id="main">
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
-    <img src="images/rider-training.jpg" alt="A rider schooling over a fence during a lesson at Forecast Farms" fetchpriority="high" onerror="this.remove()">
+    <img src="images/rider-training.jpg" style="object-position:48% 50%" alt="A rider schooling over a fence during a lesson at Forecast Farms" fetchpriority="high" onerror="this.remove()">
     <div class="ph-note" aria-hidden="true"><span>Hero photograph</span>Rider schooling over a fence</div>
   </figure>
 </section>

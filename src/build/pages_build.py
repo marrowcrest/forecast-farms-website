@@ -5,7 +5,10 @@ os.chdir(os.environ['FF_OUT'])
 PHONE_A='<a class="btn btn-ghost" href="tel:+15402741541">Call (540) 274-1541</a>'
 JEV='/contact-us?interest=junior-riding-club'
 
+FOCUS={'horse-training.jpg':'45% 50%','horse-rider.jpg':'58% 50%','about-farm.jpg':'60% 50%','junior-riding-club.jpg':'55% 50%'}
+
 def hero(eyebrow,h1,text,cta,ghost,facts,img,alt,note):
+    pos=f' style="object-position:{FOCUS[img]}"' if img in FOCUS else ''
     f='\n'.join(f'      <li><strong>{a}</strong> {b}</li>' for a,b in facts)
     return f'''<section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
@@ -21,7 +24,7 @@ def hero(eyebrow,h1,text,cta,ghost,facts,img,alt,note):
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
-    <img src="images/{img}" alt="{alt}" fetchpriority="high" onerror="this.remove()">
+    <img src="images/{img}"{pos} alt="{alt}" fetchpriority="high" onerror="this.remove()">
     <div class="ph-note" aria-hidden="true"><span>Hero photograph</span>{note}</div>
   </figure>
 </section>'''
@@ -115,7 +118,7 @@ hero('Horse Training','Your horse’s education, <em>moved forward.</em>',
  'Correct, consistent schooling for young, green and experienced horses and ponies, from the trainer who also coaches you. Skills are built at home, and shows give your horse the experience to match.',
  f'<a class="btn" href="{EV}">Schedule a Horse Evaluation</a>','<a class="btn btn-ghost" href="#how">How It Works</a>',
  [('Young and green','horses started correctly'),('Tune-ups','for experienced horses'),('Show mileage','when the horse is ready')],
- 'horse-training.jpg','Trainer schooling a young horse on the flat','Trainer schooling a young horse'),
+ 'horse-training.jpg','A rider schooling a black horse at the canter on the flat','Trainer schooling a young horse'),
 head('horses','paper','Horses we train','Every horse starts <em>where it is.</em>','We train horses and ponies at every stage, with the same priorities: correct basics, confidence, and a horse that is willing to do its job.',
  tri([('Young and green horses','Correct basics from the start: rhythm, straightness, steering, and a calm introduction to fences and new places.'),
       ('Off-track Thoroughbreds','Patient restarting for horses coming off the track, building toward a second career in the hunter ring.'),
@@ -150,7 +153,7 @@ hero('Horse + Rider Development','One plan <em>for both of you.</em>',
  'For pairs that need to progress together: the horse’s way of going and the rider’s effectiveness trained as one partnership, toward the same goals for the season.',
  f'<a class="btn" href="{EV}">Schedule an Evaluation</a>','<a class="btn btn-ghost" href="#included">What’s Included</a>',
  [('One plan','for horse and rider'),('Season goals','set and reviewed'),('Show-ready','as a pair')],
- 'horse-rider.jpg','A horse and rider competing in the hunter ring','Horse and rider in the show ring'),
+ 'horse-rider.jpg','A rider in show attire jumping a grey horse over a white fence','Horse and rider in the show ring'),
 head('who','paper','Who it’s for','For partnerships <em>with somewhere to go.</em>','Horse + Rider Development suits owners who want their horse and their own riding to move forward on the same timeline.',
  tri([('New partnerships','You have just bought or leased a horse and want the two of you on the same page quickly.'),
       ('Moving up','You are ready for a new height or division and want horse and rider prepared for it together.'),
@@ -273,7 +276,7 @@ hero('About Forecast Farms','A family farm in <em>Virginia hunt country.</em>',
  'Forecast Farms is a family-owned Hunter, Jumper and Equitation program on Atoka Road in Marshall, led by trainer Denise Finch. For more than 35 years, the farm has trained riders and horses with the same priorities: safety first, then the development of horse and rider together.',
  f'<a class="btn" href="{EV}">Schedule an Evaluation</a>','<a class="btn btn-ghost" href="#denise">Meet Denise</a>',
  [('35+ years','training riders and horses'),('Family-owned','in Marshall, Virginia'),('Year-round','indoor and outdoor rings')],
- 'about-farm.jpg','The barn and riding rings at Forecast Farms in Marshall, Virginia','The barn and rings on Atoka Road'),
+ 'about-farm.jpg','A rider on a grey horse in front of the barn at Forecast Farms','The barn and rings on Atoka Road'),
 bio,
 head('farm','','The farm','Built for <em>year-round training.</em>','The farm sits in Fauquier County hunt country, with facilities that keep training consistent through every season.',
  tri([('Indoor arena','Rubberized footing for year-round riding, whatever the weather.'),

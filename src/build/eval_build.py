@@ -95,7 +95,7 @@ body=f'''<main id="main">
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
-    <img src="images/evaluation-lesson.jpg" alt="Trainer watching a rider during an evaluation lesson" fetchpriority="high" onerror="this.remove()">
+    <img src="images/evaluation-lesson.jpg" style="object-position:75% 50%" alt="A trainer high-fiving a young rider on a lesson pony in the indoor arena" fetchpriority="high" onerror="this.remove()">
     <div class="ph-note" aria-hidden="true"><span>Hero photograph</span>Evaluation lesson, trainer at the rail</div>
   </figure>
 </section>

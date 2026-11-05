@@ -90,41 +90,26 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 }
 @media (max-width:559px){.ff .hdr-actions .btn-sm{display:none}}
 
-.ff .hero{display:flex;flex-direction:column}
-.ff .hero-copy{min-width:0;padding:3rem var(--gutter) 2.75rem;padding-inline:max(var(--gutter),calc((var(--ff-vw,100vw) - var(--max))/2 + var(--gutter)))}
-.ff .hero h1{font-size:clamp(2.75rem,1.5rem + 3.6vw,5.1rem);line-height:1.02;letter-spacing:-.02em;font-weight:350;max-width:12ch}
+.ff .hero{display:grid;grid-template-columns:minmax(0,1fr)}
+.ff .hero-media{order:-1}
+.ff .hero-copy{display:flex;flex-direction:column;align-items:flex-start;padding:1.75rem var(--gutter) 3rem;min-width:0}
+.ff .hero h1{font-size:clamp(2.75rem,1.5rem + 3.6vw,5.1rem);line-height:1.02;letter-spacing:-.02em;font-weight:350;max-width:11ch}
 .ff .hero-text{margin-top:1.75rem;font-size:1.125rem;line-height:1.65;color:var(--fg-soft);max-width:33em}
 .ff .hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
-.ff .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem 1.5rem;margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.875rem;color:var(--fg-soft)}
+.ff .hero-facts{align-self:stretch;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem 1.5rem;margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.875rem;color:var(--fg-soft)}
 .ff .hero-facts li{line-height:1.4}
 .ff .hero-facts strong{display:block;margin-bottom:.3rem;font:italic 500 1.25rem/1.1 var(--serif);color:var(--saddle)}
-.ff .ph.ph--hero{width:100%;aspect-ratio:3/2;max-height:78vh}
-@media (min-width:960px){
-.ff .hero:not(.hero--cover) .hero-copy{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(3rem,6vw,6.5rem);align-items:start;padding-block:4.75rem 4rem}
-.ff .hero:not(.hero--cover) .hero-copy .eyebrow{grid-column:1/-1}
-.ff .hero:not(.hero--cover) h1{grid-column:1;grid-row:2/span 3;max-width:13ch}
-.ff .hero:not(.hero--cover) .hero-text{grid-column:2;grid-row:2;margin-top:.6rem}
-.ff .hero:not(.hero--cover) .hero-ctas{grid-column:2;grid-row:3}
-.ff .hero:not(.hero--cover) .hero-facts{grid-column:2;grid-row:4}
-.ff .ph.ph--hero{aspect-ratio:21/9}
+.ff .ph.ph--hero{aspect-ratio:16/10}
+@media (max-width:959px){
+.ff .hero-ctas{order:3;margin-top:1.5rem}
+.ff .hero-text{order:4;margin-top:1.75rem}
+.ff .hero-facts{order:5}
 }
-
-.ff .hero--cover{position:relative;isolation:isolate;justify-content:flex-end;min-height:min(90svh,860px);background:var(--deep);color:var(--deep-fg);overflow:hidden}
-.ff .hero--cover .hero-media{position:absolute;inset:0;z-index:-1;width:auto;max-height:none;aspect-ratio:auto;margin:0;background:radial-gradient(90% 80% at 75% 20%,#5A3557,transparent 70%),linear-gradient(160deg,#4A2A47,var(--deep))}
-.ff .hero--cover .hero-media::before{display:none}
-.ff .hero--cover .hero-media::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(26,14,25,.2) 0%,rgba(26,14,25,.42) 45%,rgba(26,14,25,.9) 100%)}
-.ff .hero--cover .ph-note{left:auto;right:var(--gutter);top:6.5rem;bottom:auto;text-align:right;color:rgba(242,236,241,.62)}
-.ff .hero--cover .hero-copy{padding-block:9rem 3.5rem}
-.ff .hero--cover h1{max-width:12ch;text-shadow:0 1px 30px rgba(20,10,20,.35)}
-.ff .hero--cover .eyebrow{color:var(--band-accent)}
-.ff .hero--cover .hero-text{color:rgba(242,236,241,.88);max-width:31em}
-.ff .hero--cover .btn-ghost{color:var(--deep-fg);border-color:rgba(242,236,241,.62)}
-.ff .hero--cover .btn-ghost:hover{background:var(--deep-fg);border-color:var(--deep-fg);color:var(--deep)}
 @media (min-width:960px){
-.ff .hero--cover{justify-content:center}
-.ff .hero--cover .hero-media::after{background:linear-gradient(90deg,rgba(26,14,25,.88) 0%,rgba(26,14,25,.66) 36%,rgba(26,14,25,.14) 72%,rgba(26,14,25,.05) 100%),linear-gradient(0deg,rgba(26,14,25,.4),transparent 35%)}
-.ff .hero--cover .hero-copy{padding-block:7rem 6rem}
-.ff .hero--cover h1{font-size:clamp(3.5rem,1.6rem + 4.2vw,6rem)}
+.ff .hero{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
+.ff .hero-media{order:0}
+.ff .hero-copy{display:block;padding-block:3.5rem 4.5rem;padding-left:max(var(--gutter),calc((var(--ff-vw,100vw) - var(--max))/2 + var(--gutter)));padding-right:clamp(2rem,4vw,4.5rem)}
+.ff .ph.ph--hero{aspect-ratio:4/3}
 }
 
 .ff .proof{background:var(--bg-paper);border-bottom:1px solid var(--line)}
@@ -144,10 +129,8 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 .ff .deep .eyebrow{color:var(--band-accent)}
 .ff .deep .q-meta,.ff .deep .lede{color:var(--deep-soft)}
 .ff .deep .quote-solo blockquote p{color:var(--deep-fg)}
-.ff .hero:not(.hero--cover) .ph--hero:not(:has(img)){aspect-ratio:auto;height:clamp(10rem,16vw,14rem)}
-.ff .hero:not(.hero--cover) .ph--hero:not(:has(img))::before{background-position:center 40%;background-size:clamp(64px,8vw,96px) auto}
 .ff .photo-band{display:block;width:100%;aspect-ratio:4/3;max-height:82vh;margin:0}
-.ff .photo-band .ph-note,.ff .hero:not(.hero--cover) .ph-note{left:max(var(--gutter),calc((var(--ff-vw,100vw) - var(--max))/2 + var(--gutter)));bottom:1.5rem}
+.ff .photo-band .ph-note{left:max(var(--gutter),calc((var(--ff-vw,100vw) - var(--max))/2 + var(--gutter)));bottom:1.5rem}
 @media (min-width:700px){.ff .photo-band{aspect-ratio:21/9}}
 @keyframes ff-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes ff-settle{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
@@ -492,7 +475,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
-    <img src="images/junior-riding-club.jpg" alt="A young rider on a lesson pony with an instructor" fetchpriority="high" onerror="this.remove()">
+    <img src="images/junior-riding-club.jpg" style="object-position:55% 50%" alt="A young rider on a lesson pony with an instructor" fetchpriority="high" onerror="this.remove()">
     <div class="ph-note" aria-hidden="true"><span>Hero photograph</span>Young rider on a lesson pony</div>
   </figure>
 </section>
