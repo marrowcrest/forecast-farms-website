@@ -115,25 +115,62 @@ def make_sizes():
                 out, 'JPEG', quality=78, optimize=True, progressive=True)
 
 
+# GHL's own image service (used by the GHL site builder) resizes and converts photos in GHL Media.
+GHL_IMG = 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_{w}/u_{url}'
+GHL_WIDTHS = {'hero': (800, 1200, 1600), 'card': (600, 900, 1200)}
+# Homepage photos already in GHL Media, by media id: how wide each one shows.
+CDN_SIZES = {
+    '6adcc7799c1511d5b99c0f59': SIZES['hero'],
+    '6adcc77936aa4a07e89fa346': '(min-width: 900px) 30vw, (min-width: 700px) 45vw, 100vw',
+    '6adcc7799c1511d5b99c0f50': '(min-width: 900px) 30vw, (min-width: 700px) 45vw, 100vw',
+    '6adcc779d542268bb4fef806': '(min-width: 900px) 30vw, (min-width: 700px) 45vw, 100vw',
+    '6adc546bd542268bb4f4f358': '(min-width: 960px) 45vw, 100vw',
+    '6aded14d736386d0dcd54e14': '100vw',
+}
+# If a smaller copy fails to load, drop srcset so the browser falls back to the original photo.
+SAFE_ONERROR = 'onerror="if(this.srcset){this.removeAttribute(\'srcset\')}else{this.remove()}"'
+
+
+def ghl_set(url, widths):
+    return ', '.join(f'{GHL_IMG.format(w=w, url=url)} {w}w' for w in widths)
+
+
 def responsive(html):
-    """Add srcset for photos in images/, then swap in GHL Media URLs from images/ghl-urls.json if present."""
-    def repl(m):
-        name = m.group(1)
-        full = os.path.join(IMAGES, name + '.jpg')
-        if not os.path.exists(full):
-            return m.group(0)
-        sets = [f'images/{name}-{w}.jpg {w}w' for w in WIDTHS[kind(name)]
-                if os.path.exists(os.path.join(IMAGES, f'{name}-{w}.jpg'))]
-        if not sets:
-            return m.group(0)
-        sets.append(f'images/{name}.jpg {jpeg_width(full)}w')
-        return f'<img src="images/{name}.jpg" srcset="{", ".join(sets)}" sizes="{SIZES[kind(name)]}"'
-    html = re.sub(r'<img src="images/([a-z0-9-]+)\.jpg"', repl, html)
-    if os.path.exists(GHL_URLS):
-        for f, url in json.load(open(GHL_URLS, encoding='utf-8')).items():
-            if url:
-                html = html.replace(f'images/{f}', url)
-    return html
+    """Add srcset to photos: local phone-sized copies for images/, GHL's image service for GHL Media.
+    If images/ghl-urls.json maps a photo to its GHL Media URL, that URL is used instead of the local file."""
+    urls = json.load(open(GHL_URLS, encoding='utf-8')) if os.path.exists(GHL_URLS) else {}
+
+    def fix(m):
+        tag = m.group(0)
+        s = re.search(r' src="([^"]+)"', tag)
+        if not s or ' srcset=' in tag:
+            return tag
+        src = s.group(1)
+        local = re.fullmatch(r'images/([a-z0-9-]+)\.jpg', src)
+        if local:
+            name = local.group(1)
+            k, mapped = kind(name), urls.get(name + '.jpg')
+            sizes = SIZES[k]
+            if mapped and 'filesafe.space' in mapped:
+                new_src, sets = mapped, ghl_set(mapped, GHL_WIDTHS[k])
+            else:
+                full = os.path.join(IMAGES, name + '.jpg')
+                files = [f'{name}-{w}.jpg' for w in WIDTHS[k] if os.path.exists(os.path.join(IMAGES, f'{name}-{w}.jpg'))]
+                if not os.path.exists(full) or not files:
+                    return tag
+                pairs = [(f, f.rsplit('-', 1)[1][:-4]) for f in files] + [(name + '.jpg', jpeg_width(full))]
+                sets = ', '.join(f'{urls.get(f) or "images/" + f} {w}w' for f, w in pairs)
+                new_src = mapped or src
+        elif 'assets.cdn.filesafe.space/' in src:
+            mid = re.search(r'/media/([a-z0-9]+)\.', src)
+            sizes = CDN_SIZES.get(mid.group(1) if mid else '', '100vw')
+            new_src, sets = src, ghl_set(src, GHL_WIDTHS['hero'])
+        else:
+            return tag
+        tag = tag.replace(f' src="{src}"', f' src="{new_src}" srcset="{sets}" sizes="{sizes}"', 1)
+        return tag.replace('onerror="this.remove()"', SAFE_ONERROR)
+
+    return re.sub(r'<img\b[^>]*>', fix, html)
 
 
 def build_ghl():

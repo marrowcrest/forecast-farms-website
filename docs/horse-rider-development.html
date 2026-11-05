@@ -480,7 +480,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
-    <img src="images/horse-rider.jpg" srcset="images/horse-rider-800.jpg 800w, images/horse-rider-1200.jpg 1200w, images/horse-rider.jpg 2000w" sizes="(min-width: 960px) 55vw, 100vw" style="object-position:58% 50%" alt="A rider in show attire jumping a grey horse over a white fence" fetchpriority="high" onerror="this.remove()">
+    <img src="images/horse-rider.jpg" srcset="images/horse-rider-800.jpg 800w, images/horse-rider-1200.jpg 1200w, images/horse-rider.jpg 2000w" sizes="(min-width: 960px) 55vw, 100vw" style="object-position:58% 50%" alt="A rider in show attire jumping a grey horse over a white fence" fetchpriority="high" onerror="if(this.srcset){this.removeAttribute('srcset')}else{this.remove()}">
     <div class="ph-note" aria-hidden="true"><span>Hero photograph</span>Horse and rider in the show ring</div>
   </figure>
 </section>

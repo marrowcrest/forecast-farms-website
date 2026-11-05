@@ -64,7 +64,7 @@ The original design (before the November 2026 refresh) is kept two ways:
 
 ## Photos
 
-The homepage's six photos are hosted in GHL Media Storage and linked from `src/home.html`. For every other slot, add the photo to `images/` with the exact file name below and it appears on the next build. Until then, a labeled placeholder shows.
+The homepage's six photos are hosted in GHL Media Storage and linked from `src/home.html`. The build serves phone-sized versions of them through GHL's image service. For every other slot, add the photo to `images/` with the exact file name below and it appears on the next build. Until then, a labeled placeholder shows.
 
 | File | Page | Shot |
 |---|---|---|
@@ -87,7 +87,7 @@ Landscape photos: at least 2000px wide. Portraits: at least 1200 × 1500px. Keep
 
 1. Build in a new GHL website, not the live forecastfarms.com site (it already uses several of these paths).
 2. On each page: one full-width section with 0 padding, one Custom Code element, paste the whole file from `ghl/`. On a phone, check the sticky Book · Call · Text bar sits at the bottom of the screen (some GHL section settings can trap fixed elements).
-3. Photos: GHL pages cannot read this repo. Upload every file in `images/` (full-size and phone-sized copies) to GHL Media Storage, paste each URL into `images/ghl-urls.json` as `{"rider-training.jpg": "https://…", "rider-training-800.jpg": "https://…"}`, and rebuild. The build swaps the URLs into `ghl/`.
+3. Photos: GHL pages cannot read this repo. Upload the full-size photos in `images/` (not the `-600`/`-800`/`-900`/`-1200` copies) to GHL Media Storage, paste each URL into `images/ghl-urls.json` as `{"rider-training.jpg": "https://assets.cdn.filesafe.space/…"}`, and rebuild. The build swaps the URLs into `ghl/` and serves phone-sized versions through GHL's own image service (`images.leadconnectorhq.com`), the same one the GHL site builder uses. If that service ever fails, each photo falls back to the original.
 4. Website settings, body (footer) tracking code: the GHL External Tracking script, once, site-wide.
 5. Custom fields: Rider Type, Horse Status, Jumping Level, Training Interest, Goals, SMS Consent.
 6. Test the forms on Home and Schedule an Evaluation; check Sites > Forms > Submissions > External Forms.
