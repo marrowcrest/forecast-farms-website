@@ -115,9 +115,9 @@ def build(slug,fname,preview,title,body,css='',**ck):
 EV='/contact-us?interest=horse-training'
 body='\n\n'.join([
 hero('Horse Training','Your horse’s education, <em>moved forward.</em>',
- 'Correct, consistent schooling for young, green and experienced horses and ponies, from the trainer who also coaches you. Skills are built at home, and shows give your horse the experience to match.',
- f'<a class="btn" href="{EV}">Schedule a Horse Evaluation</a>','<a class="btn btn-ghost" href="#how">How It Works</a>',
- [('Young and green','horses started correctly'),('Tune-ups','for experienced horses'),('Show mileage','when the horse is ready')],
+ 'Denise rides your horse herself, on the flat and over fences, and keeps you posted. She gets the basics right at home first. Shows come when your horse is ready for them.',
+ f'<a class="btn" href="{EV}">Schedule an Evaluation Lesson</a>','<a class="btn btn-ghost" href="#how">How It Works</a>',
+ [('35+ years','training riders and horses in Marshall'),('Horses and ponies','young, green, off-track and experienced'),('Indoor arena','plus an outdoor all-weather ring')],
  'horse-training.jpg','A rider schooling a black horse at the canter on the flat','Trainer schooling a young horse'),
 head('horses','paper','Horses we train','Every horse starts <em>where it is.</em>','We train horses and ponies at every stage, with the same priorities: correct basics, confidence, and a horse that is willing to do its job.',
  tri([('Young and green horses','Correct basics from the start: rhythm, straightness, steering, and a calm introduction to fences and new places.'),
