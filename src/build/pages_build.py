@@ -169,10 +169,10 @@ head('season','lilac','The season','A plan you can see, <em>and adjust.</em>','E
         ('Train and review','Your lessons and Denise’s training rides work toward the plan. Denise adjusts the plan when something isn’t working.'),
         ('Compete and reflect','After each show, you and Denise go over what went well and what needs work, and update the plan.')])),
 faq('About Horse + Rider Development',[
- ('How is this different from Rider Training and Horse Training?','It combines them under one plan. The horse’s training and the rider’s lessons are scheduled together and measured against the same goals.'),
- ('Do I have to show?','Most pairs in this program have competition goals, but the same plan works for a new partnership that wants to build confidence first.'),
- ('Which shows do you go to?','We choose shows that fit each pair’s level and goals, and set the calendar with you at the start of the season.'),
- ('What does it cost?','Pricing depends on the plan for horse and rider. We confirm it after your evaluation.')],cls='paper'),
+ ('How is this different from Rider Training and Horse Training?','It combines them under one plan. Your lessons and Denise’s training rides on your horse are scheduled together and work toward the same goals.'),
+ ('Do I have to show?','No. Most pairs in this program want to show, but the same plan works for a new pair building confidence first.'),
+ ('Which shows do you go to?','That depends on your level and goals. You and Denise choose the shows and set the calendar at the start of the season.'),
+ ('What does it cost?','It depends on the plan for horse and rider. Denise confirms the price after your evaluation lesson.')],cls='paper'),
 cta('Start with an <em>evaluation.</em>','We evaluate horse and rider together, then recommend a plan for the season.',f'<a class="btn" href="{EV}">Schedule an Evaluation</a>'),
 ])
 build('horse-rider-development','forecast-farms-horse-rider-ghl.html','preview-horse-rider-development.html','Forecast Farms Horse + Rider',body,cta_href=EV)
