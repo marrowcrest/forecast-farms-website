@@ -136,12 +136,12 @@ head('how','lilac','How it works','From your evaluation lesson <em>to a better r
         ('Report and ride','Denise keeps you posted on how your horse is doing. Lessons on your horse let you feel the changes yourself.')])),
 quote('Wonderful environment and scenery with one of the best trainers I have had the chance to work under','Isabelle Gritsavage','Google review'),
 faq('About Horse Training',[
- ('Does my horse need to stay at the farm?','Where your horse is based is part of the training plan. Tell us your situation when you request an evaluation, and we will talk through the options.'),
- ('How often will my horse be ridden?','That depends on the horse’s age, fitness and goals. We set the schedule with you when we agree on the plan.'),
- ('Will I still ride my horse?','Yes, and we recommend it. Lessons on your own horse turn the training into a partnership you can ride.'),
- ('Do you train ponies?','Yes. We train horses and ponies, including ponies being prepared for junior riders.'),
- ('Can you get my horse ready to sell?','Yes. Horses in our consignment program are kept in work and presented to suitable buyers. See <a href="/sales">Horse Search &amp; Sales</a>.'),
- ('What does it cost?','Pricing depends on the training plan. We confirm it after your horse’s evaluation.')]),
+ ('Does my horse need to stay at the farm?','It depends on the plan. Tell us where your horse lives when you request an evaluation lesson, and Denise will talk through the options with you.'),
+ ('How often will my horse be ridden?','It depends on your horse’s age, fitness and goals. You and Denise set the schedule when you agree on the plan.'),
+ ('Will I still ride my horse?','Yes, and we recommend it. Lessons on your horse teach you to ride it the way it’s being trained.'),
+ ('Do you train ponies?','Yes. Denise trains horses and ponies, including ponies being prepared for junior riders.'),
+ ('Can you get my horse ready to sell?','Yes. Through consignment, Denise keeps your horse in work and shows it to buyers it suits, under a written agreement. See <a href="/sales">Horse Search &amp; Sales</a>.'),
+ ('What does it cost?','It depends on the training plan. Denise confirms the price after your evaluation lesson.')]),
 cta('Start with a <em>horse evaluation.</em>','Bring your horse for an evaluation, and we will recommend a training plan for the season.',f'<a class="btn" href="{EV}">Schedule a Horse Evaluation</a>'),
 ])
 build('training','forecast-farms-horse-training-ghl.html','preview-horse-training.html','Forecast Farms Horse Training',body,cta_href=EV)
