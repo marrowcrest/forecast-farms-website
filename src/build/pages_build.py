@@ -142,7 +142,7 @@ faq('About Horse Training',[
  ('Do you train ponies?','Yes. Denise trains horses and ponies, including ponies being prepared for junior riders.'),
  ('Can you get my horse ready to sell?','Yes. Through consignment, Denise keeps your horse in work and shows it to buyers it suits, under a written agreement. See <a href="/sales">Horse Search &amp; Sales</a>.'),
  ('What does it cost?','It depends on the training plan. Denise confirms the price after your evaluation lesson.')]),
-cta('Start with a <em>horse evaluation.</em>','Bring your horse for an evaluation, and we will recommend a training plan for the season.',f'<a class="btn" href="{EV}">Schedule a Horse Evaluation</a>'),
+cta('Start with an <em>evaluation lesson.</em>','Book an evaluation lesson for your horse, and Denise will recommend a training plan for the season.',f'<a class="btn" href="{EV}">Schedule an Evaluation Lesson</a>'),
 ])
 build('training','forecast-farms-horse-training-ghl.html','preview-horse-training.html','Forecast Farms Horse Training',body,cta_href=EV)
 
