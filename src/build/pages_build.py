@@ -150,9 +150,9 @@ build('training','forecast-farms-horse-training-ghl.html','preview-horse-trainin
 EV='/contact-us?interest=horse-rider-development'
 body='\n\n'.join([
 hero('Horse + Rider Development','One plan <em>for both of you.</em>',
- 'For pairs that need to progress together: the horse’s way of going and the rider’s effectiveness trained as one partnership, toward the same goals for the season.',
- f'<a class="btn" href="{EV}">Schedule an Evaluation</a>','<a class="btn btn-ghost" href="#included">What’s Included</a>',
- [('One plan','for horse and rider'),('Season goals','set and reviewed'),('Show-ready','as a pair')],
+ 'Denise sets goals for you and your horse together, then plans your lessons and her training rides around them for the season.',
+ f'<a class="btn" href="{EV}">Schedule an Evaluation Lesson</a>','<a class="btn btn-ghost" href="#included">What’s Included</a>',
+ [('Training rides','by Denise herself'),('Lessons','on your own horse'),('Show plans','target shows and divisions chosen with you')],
  'horse-rider.jpg','A rider in show attire jumping a grey horse over a white fence','Horse and rider in the show ring'),
 head('who','paper','Who it’s for','For partnerships <em>with somewhere to go.</em>','Horse + Rider Development suits owners who want their horse and their own riding to move forward on the same timeline.',
  tri([('New partnerships','You have just bought or leased a horse and want the two of you on the same page quickly.'),
