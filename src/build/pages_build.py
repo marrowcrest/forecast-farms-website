@@ -134,7 +134,7 @@ head('how','lilac','How it works','From your evaluation lesson <em>to a better r
         ('Plan','You and Denise agree on goals, where your horse will be based and how often it’s ridden. That’s the plan for the season.'),
         ('Train','Denise rides your horse on the flat and over fences, and adds shows once it’s ready for them.'),
         ('Report and ride','Denise keeps you posted on how your horse is doing. Lessons on your horse let you feel the changes yourself.')])),
-quote('As a trainer she has educated many successful riders and horses.','Richard I.','Charlottesville, Virginia'),
+quote('Wonderful environment and scenery with one of the best trainers I have had the chance to work under','Isabelle Gritsavage','Google review'),
 faq('About Horse Training',[
  ('Does my horse need to stay at the farm?','Where your horse is based is part of the training plan. Tell us your situation when you request an evaluation, and we will talk through the options.'),
  ('How often will my horse be ridden?','That depends on the horse’s age, fitness and goals. We set the schedule with you when we agree on the plan.'),
