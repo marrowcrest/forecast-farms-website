@@ -165,9 +165,9 @@ split('included','','What’s included','Lessons and training rides, <em>planned
         ('Progress reviews','You and Denise check horse and rider against the plan at each stage'),
         ('Show preparation as a pair','Course walks, warm-ups and a plan for each class')])),
 head('season','lilac','The season','A plan you can see, <em>and adjust.</em>','Each season follows the same cycle, so you always know what you are working on and why.',
- steps([('Set the plan','At the start of the season we evaluate horse and rider, agree on goals, and choose target shows and divisions.'),
-        ('Train and review','Lessons and training rides work toward the plan. We review progress at each stage and adjust when needed.'),
-        ('Compete and reflect','After each show we look at what went well and what needs work, and fold it back into the plan.')])),
+ steps([('Set the plan','The season starts with an evaluation lesson for horse and rider. You and Denise agree on goals and choose target shows and divisions.'),
+        ('Train and review','Your lessons and Denise’s training rides work toward the plan. Denise adjusts the plan when something isn’t working.'),
+        ('Compete and reflect','After each show, you and Denise go over what went well and what needs work, and update the plan.')])),
 faq('About Horse + Rider Development',[
  ('How is this different from Rider Training and Horse Training?','It combines them under one plan. The horse’s training and the rider’s lessons are scheduled together and measured against the same goals.'),
  ('Do I have to show?','Most pairs in this program have competition goals, but the same plan works for a new partnership that wants to build confidence first.'),
