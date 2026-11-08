@@ -173,7 +173,7 @@ faq('About Horse + Rider Development',[
  ('Do I have to show?','No. Most pairs in this program want to show, but the same plan works for a new pair building confidence first.'),
  ('Which shows do you go to?','That depends on your level and goals. You and Denise choose the shows and set the calendar at the start of the season.'),
  ('What does it cost?','It depends on the plan for horse and rider. Denise confirms the price after your evaluation lesson.')],cls='paper'),
-cta('Start with an <em>evaluation.</em>','We evaluate horse and rider together, then recommend a plan for the season.',f'<a class="btn" href="{EV}">Schedule an Evaluation</a>'),
+cta('Start with an <em>evaluation lesson.</em>','In one lesson, Denise watches you and your horse together, then recommends a plan for the season.',f'<a class="btn" href="{EV}">Schedule an Evaluation Lesson</a>'),
 ])
 build('horse-rider-development','forecast-farms-horse-rider-ghl.html','preview-horse-rider-development.html','Forecast Farms Horse + Rider',body,cta_href=EV)
 
