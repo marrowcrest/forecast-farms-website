@@ -179,7 +179,7 @@ body=f'''<main id="main">
         <p class="eyebrow">What we work on</p>
         <h2 id="work-title">Fundamentals first, <em>then height.</em></h2>
       </div>
-      <p class="lede">Every lesson works on the same four areas. The balance between them shifts as the rider progresses.</p>
+      <p class="lede">Every lesson works on the same four areas. How much time each one gets changes as you improve.</p>
     </header>
     <div class="tri tri--2">
       <div>
