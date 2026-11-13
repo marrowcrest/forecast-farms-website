@@ -8,7 +8,18 @@ The rules for every Claude session rewriting copy on this site. Several sessions
 
 ## The job
 
-Copy only. Layout, components, classes, photos, small labels (eyebrows) and the italic tails on headings (`<em>`) stay as they are. Don't add or remove sections, cards or fields unless Mich approves it.
+Copy only. Layout, components, classes, photos and small labels (eyebrows) stay as they are. Don't add or remove sections, cards or fields unless Mich approves it. Headings follow the rule below.
+
+## Headings (new rule, Mich, 13 Nov 2026)
+
+This replaces the old rule that the italic tails on headings (`<em>`) were locked.
+
+- Heading wording can be rewritten, including the part that used to be the italic tail. It needs Mich's approval like any other copy.
+- Italics (`<em>`) appear on two headings per page only: the hero heading and the bottom banner. Every other heading is plain, with no `<em>`.
+- Section headings are plain and descriptive. They say what the section holds, in the reader's words. Example: "Private or semi-private lessons", not "Choose the format *that fits the goal.*"
+- Avoid the two-beat rhythm ("X, and Y.") and wordplay. Don't repeat the eyebrow.
+- Why: 44 of the site's 55 headings used the same plain-half-plus-italic-tail shape, and Mich judged that it read as templated. Readers of sectioned pages look mainly at the headings (Nielsen Norman Group, layer-cake scanning pattern), and look-alike headings make people re-read (usability.gov Research-Based Guidelines, chapter 9).
+- Rollout: Session A applies it to Rider Training first, then sends Mich one heading table per finished page (Horse Training, Horse + Rider Development, then the homepage, which still needs her approval before any edit). Other sessions apply it on their own pages.
 
 ## One section per message
 
@@ -20,6 +31,8 @@ Copy only. Layout, components, classes, photos, small labels (eyebrows) and the 
    - end with: "Approve, or tell me what to change."
 3. Wait for her approval. Apply exactly what she approved, deploy, then send the link to that section and the next section's proposal in the same message.
 4. Put links and tables in your final message. Text written between tool calls is not shown to her.
+
+Exception: a heading-only pass on a finished page goes to Mich as one table for the whole page.
 
 ## Applying an approved section
 
@@ -51,7 +64,7 @@ gh run list -L 3                 # wait until "Build site" and "pages build and 
 
 ## Testimonials
 
-Word for word, whole sentences only. No "…" excerpts, no fixed punctuation or typos, no edits of any kind. Don't use the same quote on two pages. Pick from the testimonial bank.
+Word for word, whole sentences only. No "…" excerpts, no fixed punctuation or typos, no edits of any kind. Don't use the same quote on two pages. Pick from the testimonial bank. Credit Google reviewers by first name and last initial, with "Google review" (Mich, 13 Nov 2026): Virginia Code § 8.01-40 requires written consent to use a person's name in advertising.
 
 ## Confirmed facts
 
@@ -66,20 +79,20 @@ Word for word, whole sentences only. No "…" excerpts, no fixed punctuation or 
 
 ## Not confirmed (never state as fact)
 
-- Group lessons. Don't mention them.
+- Group lessons. Don't mention them. (The "Small group" card was removed from Rider Training on 13 Nov 2026.)
 - Prices, lesson length, weekly schedule, the year the farm started, show results, the current horse list, Junior Riding Club details, what to bring, policies.
 - Mich chose to keep the homepage saying riders work with Denise. On inner pages, don't add new claims that Denise teaches every lesson.
+- The open questions for Denise are in `claude/denise-questions.md` in the project.
 
 ## Who works on what
 
 | Session | Pages, in order | Builder block |
 |---|---|---|
-| Main | Rider Training | `src/build/rider_build.py` |
-| A | Horse Training, then Horse + Rider Development | `pages_build.py`: Horse Training, Horse + Rider Development |
+| A | Horse Training and Horse + Rider Development (done), then Rider Training (taken over from the main session on 13 Nov 2026, at Mich's request) | `pages_build.py`: Horse Training, Horse + Rider Development; `src/build/rider_build.py` |
 | B | Junior Riding Club, then Horse Search & Sales | `pages_build.py`: Junior Riding Club, Horse Search & Sales |
 | C | About, then Contact (evaluation request page) | `pages_build.py`: About; `src/build/eval_build.py` |
 
-Page links: `training.html`, `horse-rider-development.html`, `lessons.html`, `sales.html`, `about-us.html`, `contact-us.html` on the demo site.
+Page links: `rider-training.html`, `training.html`, `horse-rider-development.html`, `lessons.html`, `sales.html`, `about-us.html`, `contact-us.html` on the demo site.
 
 ## How Mich likes it
 
