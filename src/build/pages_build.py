@@ -134,7 +134,7 @@ head('how','lilac','How it works','From your evaluation lesson <em>to a better r
         ('Plan','You and Denise agree on goals, where your horse will be based and how often it’s ridden. That’s the plan for the season.'),
         ('Train','Denise rides your horse on the flat and over fences, and adds shows once it’s ready for them.'),
         ('Report and ride','Denise keeps you posted on how your horse is doing. Lessons on your horse let you feel the changes yourself.')])),
-quote('Wonderful environment and scenery with one of the best trainers I have had the chance to work under','Isabelle Gritsavage','Google review'),
+quote('Wonderful environment and scenery with one of the best trainers I have had the chance to work under','Isabelle G.','Google review'),
 faq('About Horse Training',[
  ('Does my horse need to stay at the farm?','It depends on the plan. Tell us where your horse lives when you request an evaluation lesson, and Denise will talk through the options with you.'),
  ('How often will my horse be ridden?','It depends on your horse’s age, fitness and goals. You and Denise set the schedule when you agree on the plan.'),
@@ -168,7 +168,7 @@ head('season','lilac','The season','A plan you can see, <em>and adjust.</em>','E
  steps([('Set the plan','The season starts with an evaluation lesson for horse and rider. You and Denise agree on goals and choose target shows and divisions.'),
         ('Train and review','Your lessons and Denise’s training rides work toward the plan. Denise adjusts the plan when something isn’t working.'),
         ('Compete and reflect','After each show, you and Denise go over what went well and what needs work, and update the plan.')])),
-quote('I especially appreciate how much they emphasize the safety of both horse and rider in every lesson.','Julia Toms','Google review'),
+quote('I especially appreciate how much they emphasize the safety of both horse and rider in every lesson.','Julia T.','Google review'),
 faq('About Horse + Rider Development',[
  ('How is this different from Rider Training and Horse Training?','It combines them under one plan. Your lessons and Denise’s training rides on your horse are scheduled together and work toward the same goals.'),
  ('Do I have to show?','No. Most pairs in this program want to show, but the same plan works for a new pair building confidence first.'),
