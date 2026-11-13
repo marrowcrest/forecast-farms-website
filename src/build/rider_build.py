@@ -240,8 +240,8 @@ body=f'''<main id="main">
 <section id="voice" class="section deep" aria-label="From a rider">
   <div class="wrap">
     <figure class="quote-solo">
-      <blockquote><p>“She pays close attention not only to the horse’s way of going but also the rider so the two are on the same page.”</p></blockquote>
-      <figcaption><span class="q-name">Jana</span><span class="q-meta">Fairfax, Virginia</span></figcaption>
+      <blockquote><p>“I took a 35 year break from riding and Denise &amp; her team are helping me get back in the saddle again with confidence.”</p></blockquote>
+      <figcaption><span class="q-name">Jenn P.</span><span class="q-meta">Google review</span></figcaption>
     </figure>
   </div>
 </section>
