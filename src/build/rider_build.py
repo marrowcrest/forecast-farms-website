@@ -128,7 +128,7 @@ body=f'''<main id="main">
         <p class="eyebrow">Who it’s for</p>
         <h2 id="who-title">For riders who want their riding <em>to change.</em></h2>
       </div>
-      <p class="lede">Rider Training is for riders who ride consistently and want measurable progress, whatever horse they ride.</p>
+      <p class="lede">Rider Training is for riders who ride consistently and want to keep improving, whatever horse they ride.</p>
     </header>
     <div class="tri">
       <div>
@@ -137,11 +137,11 @@ body=f'''<main id="main">
       </div>
       <div>
         <h3>Adult riders</h3>
-        <p>Adults returning to riding, moving up a level, or preparing to show, who want clear instruction and an honest read on their progress.</p>
+        <p>Adults returning to riding, moving up a level, or preparing to show. You hear what is improving and what still needs work.</p>
       </div>
       <div>
         <h3>Owners and ship-ins</h3>
-        <p>Riders with their own horse, based here or trailered in, who want lessons that account for that horse’s training as well as their own.</p>
+        <p>Riders with their own horse, based here or trailered in. Your lessons take your horse’s training into account as well as your own.</p>
       </div>
     </div>
   </div>
