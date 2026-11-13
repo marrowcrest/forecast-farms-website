@@ -287,7 +287,7 @@ head('values','lilac','How we work','Three things <em>that do not change.</em>',
  tri([('Safety first','Suitable horses, sound fundamentals and close supervision come before everything else.'),
       ('Horse and rider together','We develop the horse and the rider at the same time, because neither progresses far without the other.'),
       ('Plain feedback','You always know what you are working on, what is improving and what still needs work.')])),
-quote('At Forecast Farms Denise makes you feel like family every time.','Beth P.','The Plains, Virginia'),
+quote('Her professionalism and experience are second to none - she is a superb trainer who teaches at an individual level, with a care and investment in her students that comes directly from the heart.','Jenn W.','Google review'),
 f'''<section id="visit" class="section" aria-labelledby="visit-sec-title">
   <div class="wrap split">
     <div>
