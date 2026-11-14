@@ -281,10 +281,10 @@ body=f'''<main id="main">
   <div class="wrap">
     <div>
       <h2 id="cta-title">Start with an <em>evaluation lesson.</em></h2>
-      <p>One lesson to see where you are, agree on goals, and recommend the right format and schedule.</p>
+      <p>In one lesson, we see how you ride, agree on your goals, and recommend a lesson format and schedule.</p>
     </div>
     <div class="cta-actions">
-      <a class="btn" href="{EVAL}">Schedule an Evaluation</a>
+      <a class="btn" href="{EVAL}">Schedule an Evaluation Lesson</a>
       <a class="btn btn-ghost" href="tel:+15402741541">Call (540) 274-1541</a>
     </div>
   </div>
