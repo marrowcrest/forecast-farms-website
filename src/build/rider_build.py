@@ -223,9 +223,9 @@ body=f'''<main id="main">
     <header class="sec-head">
       <div>
         <p class="eyebrow">Our schoolmasters</p>
-        <h2 id="sm-title">No horse yet? <em>Ride one of ours.</em></h2>
+        <h2 id="sm-title">No horse yet? Ride one of ours.</h2>
       </div>
-      <p class="lede">Our experienced horses and ponies teach riders at every stage of the program. We match each rider with the right one after the evaluation.</p>
+      <p class="lede">Our schoolmasters teach riders at every stage of the program. We match you with one after your evaluation lesson.</p>
     </header>
     <div class="sm-feature">
 {horses}    </div>

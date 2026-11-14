@@ -74,6 +74,7 @@ Word for word, whole sentences only. No "…" excerpts, no fixed punctuation or 
 - 35+ years training riders and horses in Marshall. Denise won Local Pony Hunter at Upperville.
 - Denise teaches some lessons. Trusted, qualified assistant instructors teach others. Denise does the training herself: training rides on horses, and riders training for shows.
 - The Junior Riding Club (ages 4 to 7) is still offered.
+- The five schoolmasters named on Rider Training (Chief, Princess Audrey, Herman, Remi, Freddy) are all still at the farm (Mich, 14 Nov 2026).
 - Sales: green and made horses and ponies for sale or lease, consignment under a written agreement, and a pre-purchase exam recommended.
 - Denise answers form requests herself in the GHL app.
 
