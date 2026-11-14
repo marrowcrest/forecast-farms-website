@@ -744,7 +744,7 @@ const t=q('#pw-track'),ctrl=q('.ff .pw-controls'),dots=q('.ff .pw-dots'),arrows=
 if(!t||!ctrl||!dots||arrows.length<2)return;
 const over=t.scrollWidth>t.clientWidth+4;ctrl.hidden=!over;if(!over)return;
 const st=pwStep(t),n=t.children.length-Math.max(1,Math.round((t.clientWidth+16)/st))+1;
-if(dots.children.length!==n){dots.innerHTML='';for(let i=0;i<n;i++){const b=document.createElement('button');b.type='button';b.className='pw-dot';b.dataset.dot=i;b.setAttribute('aria-label','Pathway '+(i+1));dots.appendChild(b);}}
+if(dots.children.length!==n){dots.innerHTML='';for(let i=0;i<n;i++){const b=document.createElement('button');b.type='button';b.className='pw-dot';b.dataset.dot=i;b.setAttribute('aria-label','Program '+(i+1));dots.appendChild(b);}}
 const idx=Math.min(n-1,Math.round(t.scrollLeft/st));
 [...dots.children].forEach((d,i)=>{d.classList.toggle('is-active',i===idx);d.setAttribute('aria-current',i===idx?'true':'false');});
 arrows[0].disabled=t.scrollLeft<4;arrows[1].disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4;
