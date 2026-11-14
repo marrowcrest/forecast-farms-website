@@ -83,15 +83,15 @@ body=f'''<main id="main">
   <div class="hero-copy">
     <p class="eyebrow">Evaluation lesson</p>
     <h1 id="hero-title">Start with an <em>evaluation lesson.</em></h1>
-    <p class="hero-text">Every new rider and horse at Forecast Farms begins here. In one lesson, Denise sees where you are, talks through your goals, and recommends the training that fits you and your horse.</p>
+    <p class="hero-text">Every new rider and horse at Forecast Farms starts here. In one lesson, we see how you ride, talk through your goals, and recommend a program for you and your horse.</p>
     <div class="hero-ctas">
-      <a class="btn" href="#request">Request an Evaluation</a>
+      <a class="btn" href="#request">Schedule an Evaluation Lesson</a>
       <a class="btn btn-ghost" href="tel:+15402741541">Call (540) 274-1541</a>
     </div>
     <ul class="hero-facts">
       <li><strong>One lesson</strong> to assess rider and horse</li>
       <li><strong>Your horse</strong> or one of our schoolmasters</li>
-      <li><strong>A clear plan</strong> pathway, schedule and goals</li>
+      <li><strong>Denise</strong> answers your request herself</li>
     </ul>
   </div>
   <figure class="ph ph--hero hero-media">
