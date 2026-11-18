@@ -147,7 +147,57 @@ body=f'''<main id="main">
   </div>
 </section>
 
-<section id="formats" class="section" aria-labelledby="fmt-title">
+<section id="disciplines" class="section" aria-labelledby="disc-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <div>
+        <p class="eyebrow">The disciplines</p>
+        <h2 id="disc-title">What the hunter, jumper and equitation rings judge</h2>
+      </div>
+      <p class="lede">Each ring scores something different, so we train for the ring you want to ride in.</p>
+    </header>
+    <div class="disc-grid">
+      <article class="disc">
+        <figure class="ph">
+          <img src="https://assets.cdn.filesafe.space/yFHRGgbUYoTRIY9XZIJQ/media/6adcc77936aa4a07e89fa346.jpg" alt="A hunter cantering to a fence in a smooth, even rhythm" loading="lazy" onerror="this.remove()">
+          <div class="ph-note" aria-hidden="true"><span>Photograph</span>Hunter round, even rhythm to a fence</div>
+        </figure>
+        <h3>Hunter</h3>
+        <p>The hunter ring comes from the hunting field. The judge scores the horse, so the goal is a smooth round at an even pace.</p>
+        <dl class="disc-meta">
+          <div><dt>Judged on</dt><dd>The horse’s way of going, jumping form, manners, and an even pace with accurate distances.</dd></div>
+          <div><dt>Suits riders who</dt><dd>Like rhythm and precision.</dd></div>
+        </dl>
+      </article>
+      <article class="disc">
+        <figure class="ph">
+          <img src="https://assets.cdn.filesafe.space/yFHRGgbUYoTRIY9XZIJQ/media/6adcc7799c1511d5b99c0f50.jpg" alt="A jumper turning tightly toward a colored oxer" loading="lazy" onerror="this.remove()">
+          <div class="ph-note" aria-hidden="true"><span>Photograph</span>Jumper turning to a colored oxer</div>
+        </figure>
+        <h3>Jumper</h3>
+        <p>Jumpers are scored on faults and time, not style. The fastest clear round wins, so control and tight turns matter most.</p>
+        <dl class="disc-meta">
+          <div><dt>Judged on</dt><dd>Faults and time: rails down, refusals and time penalties, often decided in a jump-off.</dd></div>
+          <div><dt>Suits riders who</dt><dd>Enjoy technical courses, tight turns and riding against the clock.</dd></div>
+        </dl>
+      </article>
+      <article class="disc">
+        <figure class="ph">
+          <img src="https://assets.cdn.filesafe.space/yFHRGgbUYoTRIY9XZIJQ/media/6adcc779d542268bb4fef806.jpg" alt="An equitation rider in a correct, quiet position over a fence" loading="lazy" onerror="this.remove()">
+          <div class="ph-note" aria-hidden="true"><span>Photograph</span>Equitation rider, correct position</div>
+        </figure>
+        <h3>Equitation</h3>
+        <p>Equitation judges the rider, not the horse. The best riders make a hard course look easy.</p>
+        <dl class="disc-meta">
+          <div><dt>Judged on</dt><dd>The rider’s position, use of the aids, control and accuracy of the track, with tests in some classes.</dd></div>
+          <div><dt>Suits riders who</dt><dd>Want a correct position, which helps in every ring.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formats" class="section paper" aria-labelledby="fmt-title">
   <div class="wrap">
     <header class="sec-head">
       <div>
