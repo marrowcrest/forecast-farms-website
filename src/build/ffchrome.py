@@ -76,6 +76,33 @@ LIB_CSS='''
 .ff .sm p{font-size:.925rem;color:var(--fg-soft)}
 '''
 
+def photo(src,alt,note,cls='ph',label='Photograph',lazy=True):
+    ld=' loading="lazy"' if lazy else ''
+    return f'<figure class="{cls}"><img src="{src}" alt="{alt}"{ld} onerror="this.remove()"><div class="ph-note" aria-hidden="true"><span>{label}</span>{note}</div></figure>'
+
+def band(src,alt,note):
+    return photo(src,alt,note,cls='ph photo-band')
+
+def pgrid(label,items,cls=''):
+    figs='\n      '.join(photo(s,a,n) for s,a,n in items)
+    return f'''<section class="section {cls}" aria-label="{label}">
+  <div class="wrap">
+    <div class="pgrid">
+      {figs}
+    </div>
+  </div>
+</section>'''
+
+def quote_tbd(cls='deep'):
+    return f'''<section class="section {cls}" aria-label="From a client">
+  <div class="wrap">
+    <figure class="quote-solo">
+      <p class="tbd">Testimonial to come: waiting on the testimonial bank (#4)</p>
+      <blockquote><p>A matched quote from a Google review goes here, word for word.</p></blockquote>
+    </figure>
+  </div>
+</section>'''
+
 HOSTILE='<style>body{margin:0;font-family:Times;color:red}h2{color:blue}p{font-size:22px}.c-section{padding:40px 15px}.c-row{max-width:1170px;margin:0 auto;padding:0 15px}.c-el{overflow:hidden}</style>'
 
 def assemble(head,css,header,body,footer,script,track,extra_js=PAGE_JS):

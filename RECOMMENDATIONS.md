@@ -20,26 +20,26 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 | 1 | Show prices: the evaluation lesson and lesson rates ("from $X"). A placeholder for now | Placeholders on Home (program cards, evaluation lesson); waiting on Denise |
 | 2 | Cut the form from 9 fields to 4: name, phone or email, who it's for (rider / horse / both), message | **Done** on the branch (Home and Schedule an Evaluation) |
 | 3 | Google rating near the top of the homepage, linked to the reviews. Shown only if it's above 4.7 | **Done**: shows 5.0 from 10 reviews (testimonial bank, 6 Nov 2026). Needs the exact Google reviews link |
-| 4 | One matched testimonial on every inner page (word for word, from the testimonial bank) | Approved |
+| 4 | One matched testimonial on every inner page (word for word, from the testimonial bank) | 4 of 7 pages have one; Sales, Junior Riding Club and Schedule an Evaluation wait on access to the testimonial bank |
 
 ## B. Structure
 
 | # | Idea | Status |
 |---|---|---|
 | 5 | Homepage from 11 sections to 7: top banner and facts strip, then programs, how the evaluation works, Denise, testimonials, who it's for, and the form. "Hunter, jumper or equitation" moves to Rider Training. The Sales section becomes a link | **Done** on the branch |
-| 6 | Inner pages: one full-width photo band, one large quote and one photo grid each, to break the repeated layout | Approved |
-| 7 | A "Meet the schoolmasters" gallery: photo, breed, size and one line for each of the five | Approved; photos in the Photos list below |
+| 6 | Inner pages: one full-width photo band, one large quote and one photo grid each, to break the repeated layout | **Built** on 6 inner pages (photo slots wait on the photo upgrade; Sales and Junior Riding Club quotes wait on #4). Not on Schedule an Evaluation, to keep the form page short |
+| 7 | A "Meet the schoolmasters" gallery: photo, breed, size and one line for each of the five | **Built** on Rider Training; 3 heights and 4 photos to come |
 | 8 | A "New riders: start here" FAQ page: prices, lesson length, what to bring, schedule, cancellations | Approved, waiting on Denise |
-| 9 | A short note from Denise in her own voice, signed, on Home and About | Draft on Home, marked as a draft; About next. Denise approves the text |
+| 9 | A short note from Denise in her own voice, signed, on Home and About | Drafts on Home and About, marked as drafts. Denise approves the text |
 
 ## C. Copy
 
 | # | Idea | Status |
 |---|---|---|
-| 10 | Headings say what and where, e.g. "Hunter, jumper and equitation lessons in Marshall, Virginia" | Home and Rider Training's new section done; other inner pages next |
+| 10 | Headings say what and where, e.g. "Hunter, jumper and equitation lessons in Marshall, Virginia" | **Done** on Home and all inner pages |
 | 11 | Specifics instead of general claims: years, named shows, named horses, the facilities | Approved; new facts confirmed by Denise first |
-| 12 | Finish the cleanup: banned words, italic headings (2 per page), two-beat headings | Approved |
-| 13 | Shorter body text: one or two sentences per section intro | Approved |
+| 12 | Finish the cleanup: banned words, italic headings (2 per page), two-beat headings | **Done**: 0 banned words, 2 italic headings on every page |
+| 13 | Shorter body text: one or two sentences per section intro | **Done** on Home and inner pages |
 
 ## D. Visual
 
@@ -102,6 +102,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 10. **Horses for sale:** the current list, or "ask us" for now
 11. **Homepage quotes:** are Jessica M., Jana, Richard I. and Beth P. Google reviews? They are credited by town today; the rule is "First name + initial, Google review"
 12. **Photos:** moved to the Photos list below (Mich resolves last)
+13. **Schoolmaster heights:** Herman, Remi and Freddy, in hands (Chief 13.0 and Princess Audrey 12.2 are on the site)
 
 ## Photos: Mich resolves last
 
@@ -113,10 +114,11 @@ Mich is upgrading the photos and will resolve this list after the rest of the wo
 | P2 | Rider Training disciplines: Hunter, Jumper, Equitation (GHL media `…fa346`, `…0f50`, `…f806`; moved from Home) | 1122 × 1402, under the 1200 × 1500 spec; 2.5–3.2 MB each | Replace with larger, lighter versions |
 | P3 | Rider Training, Jumper photo (`…0f50`) | Same shot as the Rider Training hero (`rider-training.jpg`) | A different jumper photo |
 | P4 | Home Visit block (#17) | Uses the barn and ring photo (`…4e14`, 6000 × 4000, 2.5 MB) instead of the farm entrance | Add a farm entrance photo; also export the barn photo smaller |
-| P5 | Trainer at the rail (GHL media `…f358`, 1200 × 1500) | No longer used: it was in the "How Denise teaches" section removed from Home | Reuse it on About or in an inner-page photo grid (#6) |
+| P5 | Trainer at the rail (GHL media `…f358`, 1200 × 1500) | Removed from Home with the "How Denise teaches" section; now in the Horse Training photo grid | Keep, or replace in the upgrade |
 | P6 | `denise-finch.jpg` (About) | 1080 × 1350, under the 1200 × 1500 spec | Replace with a 1200 × 1500+ portrait |
 | P7 | `schoolmaster-audrey.jpg` (Rider Training, Junior Riding Club) | Missing, so a placeholder shows | Add the photo |
 | P8 | Herman, Remi, Freddy (#7 schoolmaster gallery) | No photos yet | Add one 4:5 portrait each |
 | P9 | `horse-sales.jpg` (Horse Search & Sales) | Missing, so a placeholder shows | Add the photo |
-| P10 | Inner-page photo bands and grids (#6) | Each page needs one wide band and 3–4 grid photos | Built with current photos or placeholders; swap them in your upgrade |
+| P10 | Inner-page photo bands and grids (#6) | 6 bands and 18 grid slots, all labeled placeholders except the trainer-at-the-rail photo (P5, now in the Horse Training grid). Slot names and shots are in the README photo table | Add the photos with the slot names |
+| P12 | About hero (`about-farm.jpg`) | Same shot as the barn photo in the Home Visit block | A different photo in one of the two places |
 | P11 | Homepage video loop (#16) | Waits on new footage | After the photo upgrade |

@@ -139,7 +139,7 @@ body=f'''<main id="main">
     <header class="sec-head">
       <div>
         <p class="eyebrow">Preparing for your lesson</p>
-        <h2 id="prep-title">What we look at, and <em>what to bring.</em></h2>
+        <h2 id="prep-title">The rider, the horse, and what to bring</h2>
       </div>
       <p class="lede">Knowing what Denise is watching for helps you get the most from the lesson.</p>
     </header>
@@ -188,7 +188,7 @@ body=f'''<main id="main">
       <dl class="eval-facts">
         <div><dt>Riders</dt><dd>Junior and adult riders</dd></div>
         <div><dt>Horse</dt><dd>Your own, a ship-in, or one of our schoolmasters</dd></div>
-        <div><dt>Outcome</dt><dd>A recommended pathway and training schedule</dd></div>
+        <div><dt>Outcome</dt><dd>A recommended program and training schedule</dd></div>
       </dl>
       <div class="contact">
         <p><span>Call</span><a href="tel:+15402741541">(540) 274-1541</a></p>
@@ -208,7 +208,7 @@ body=f'''<main id="main">
       <div class="faq-list">
         <details>
           <summary>Do I need my own horse?</summary>
-          <p>No. Riders train on their own horse, ship in for lessons, or ride one of our experienced schoolmasters. Tell us in your request and we will plan the lesson around it.</p>
+          <p>No. Riders train on their own horse, ship in for lessons, or ride one of our schoolmasters. Tell us in your request and we will plan the lesson around it.</p>
         </details>
         <details>
           <summary>What level should I be?</summary>
@@ -220,11 +220,11 @@ body=f'''<main id="main">
         </details>
         <details>
           <summary>How much does the evaluation cost?</summary>
-          <p>We confirm the current rate when we schedule your lesson. Call or email us if you would like it before you send a request.</p>
+          <p>The evaluation lesson is <span class="tbd">price to confirm</span>. Call or email us if you have questions before you send a request.</p>
         </details>
         <details>
           <summary>What happens after the evaluation?</summary>
-          <p>We recommend a pathway, a schedule and first goals, and you decide whether to go ahead. Lessons and training begin once the farm’s agreements and release forms are signed.</p>
+          <p>We recommend a program, a schedule and first goals, and you decide whether to go ahead. Lessons and training begin once the farm’s agreements and release forms are signed.</p>
         </details>
         <details>
           <summary>Do you offer trail rides or one-time rides?</summary>
