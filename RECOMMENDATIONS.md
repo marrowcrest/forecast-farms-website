@@ -28,7 +28,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 |---|---|---|
 | 5 | Homepage from 11 sections to 7: top banner and facts strip, then programs, how the evaluation works, Denise, testimonials, who it's for, and the form. "Hunter, jumper or equitation" moves to Rider Training. The Sales section becomes a link | **Done** on the branch |
 | 6 | Inner pages: one full-width photo band, one large quote and one photo grid each, to break the repeated layout | Approved |
-| 7 | A "Meet the schoolmasters" gallery: photo, breed, size and one line for each of the five | Approved, needs photos |
+| 7 | A "Meet the schoolmasters" gallery: photo, breed, size and one line for each of the five | Approved; photos in the Photos list below |
 | 8 | A "New riders: start here" FAQ page: prices, lesson length, what to bring, schedule, cancellations | Approved, waiting on Denise |
 | 9 | A short note from Denise in her own voice, signed, on Home and About | Draft on Home, marked as a draft; About next. Denise approves the text |
 
@@ -45,7 +45,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 
 | # | Idea | Status |
 |---|---|---|
-| 14 | A half-day professional photo shoot: lessons, jumping, the barn, the schoolmasters, Denise teaching | Approved, to book |
+| 14 | A half-day professional photo shoot: lessons, jumping, the barn, the schoolmasters, Denise teaching | Approved; Mich handles the photo upgrade, last (Photos list below) |
 | 15 | Scroll-in fade, photo zoom on hover, card lift, arrow nudge, header shrink | **Done** on the branch (commit a2195f2) |
 | 16 | A 6–8 second silent video loop at the top of the homepage | Approved for later, after the shoot |
 | 17 | Visit section with a photo of the farm entrance and a "Get directions" button | **Done** on Home, with the barn photo until an entrance photo is shot |
@@ -83,11 +83,29 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 2. **Junior Riding Club:** are $375 / $700 / $900 a month still right? Are the level names (Blue, Orange), the private online community and the Horsesense curriculum current?
 3. **Lessons:** lesson length, weekly schedule, cancellation policy
 4. **What to bring:** confirm the list on the evaluation page (helmet standard, boots, gloves, Coggins and vaccinations for ship-ins, tack)
-5. **Photos:** `horse-sales.jpg` and `schoolmaster-audrey.jpg`, plus Herman, Remi and Freddy. Book the shoot (#14)
+5. **Photos:** moved to the Photos list below (Mich resolves last)
 6. **Google:** the current rating and number of reviews, and the review link
 7. **Testimonials:** Jana's last initial, and OK to credit quotes as "First name + initial, Google review"
 8. **Her note (#9):** a few sentences in her own words, or approve a draft
 9. **Specifics (#11):** any facts to add, such as the indoor arena size, show results, how long each schoolmaster has been at the farm
 10. **Horses for sale:** the current list, or "ask us" for now
 11. **Homepage quotes:** are Jessica M., Jana, Richard I. and Beth P. Google reviews? They are credited by town today; the rule is "First name + initial, Google review"
-12. **Photo shoot (#14):** add the farm entrance (for the Visit block) and a jumper shot that isn't the Rider Training hero photo
+12. **Photos:** moved to the Photos list below (Mich resolves last)
+
+## Photos: Mich resolves last
+
+Mich is upgrading the photos and will resolve this list after the rest of the work. Until then, pages use the current photos or labeled placeholders, and any new photo comment is added here instead of blocking the work. Spec (README): landscape at least 2000px wide, portrait at least 1200 × 1500px, under about 500 KB.
+
+| # | Slot | Comment | Suggestion |
+|---|---|---|---|
+| P1 | Home hero (GHL media `…0f59`, hunter on a grey) | 1448 × 1086, under the 2000px spec; 3.1 MB file | Replace with a 2000px+ version under 500 KB |
+| P2 | Rider Training disciplines: Hunter, Jumper, Equitation (GHL media `…fa346`, `…0f50`, `…f806`; moved from Home) | 1122 × 1402, under the 1200 × 1500 spec; 2.5–3.2 MB each | Replace with larger, lighter versions |
+| P3 | Rider Training, Jumper photo (`…0f50`) | Same shot as the Rider Training hero (`rider-training.jpg`) | A different jumper photo |
+| P4 | Home Visit block (#17) | Uses the barn and ring photo (`…4e14`, 6000 × 4000, 2.5 MB) instead of the farm entrance | Add a farm entrance photo; also export the barn photo smaller |
+| P5 | Trainer at the rail (GHL media `…f358`, 1200 × 1500) | No longer used: it was in the "How Denise teaches" section removed from Home | Reuse it on About or in an inner-page photo grid (#6) |
+| P6 | `denise-finch.jpg` (About) | 1080 × 1350, under the 1200 × 1500 spec | Replace with a 1200 × 1500+ portrait |
+| P7 | `schoolmaster-audrey.jpg` (Rider Training, Junior Riding Club) | Missing, so a placeholder shows | Add the photo |
+| P8 | Herman, Remi, Freddy (#7 schoolmaster gallery) | No photos yet | Add one 4:5 portrait each |
+| P9 | `horse-sales.jpg` (Horse Search & Sales) | Missing, so a placeholder shows | Add the photo |
+| P10 | Inner-page photo bands and grids (#6) | Each page needs one wide band and 3–4 grid photos | Built with current photos or placeholders; swap them in your upgrade |
+| P11 | Homepage video loop (#16) | Waits on new footage | After the photo upgrade |
