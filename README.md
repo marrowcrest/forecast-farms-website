@@ -78,6 +78,9 @@ The homepage's six photos are hosted in GHL Media Storage and linked from `src/h
 | `about-farm.jpg` | About | Barn, rings and countryside (landscape) |
 | `denise-finch.jpg` | About | Denise, mounted or at the barn (portrait 4:5) |
 | `junior-riding-club.jpg` | Junior Riding Club | A young rider on a lesson pony (landscape) |
+| `schoolmaster-herman.jpg`, `schoolmaster-remi.jpg`, `schoolmaster-freddy.jpg` | Rider Training | Each horse (portrait 4:5) |
+| `PAGE-band.jpg` | Each inner page | Full-width band (landscape, very wide crop): `rider-training`, `horse-training`, `horse-rider`, `sales`, `about`, `junior-riding-club` |
+| `PAGE-grid-1.jpg` to `PAGE-grid-3.jpg` | Each inner page | Photo grid: 1 landscape, then 2 portraits (4:5). The shot for each slot shows on its placeholder |
 
 Landscape photos: at least 2000px wide. Portraits: at least 1200 × 1500px. Keep files under about 500 KB each so pages load quickly.
 
