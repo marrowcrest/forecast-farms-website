@@ -1,6 +1,6 @@
 import re,os
 os.chdir(os.environ['FF_OUT'])
-from ffchrome import chrome
+from ffchrome import chrome,band,pgrid
 EVAL='/contact-us?interest=rider-training'
 head,header,footer,script,track=chrome(current='rider-training',cta_href=EVAL)
 
@@ -28,14 +28,6 @@ css='''
 .ff .ticks li::before{content:"";position:absolute;left:.1rem;top:1.25rem;width:.75rem;height:.4rem;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
 .ff .ticks li span{display:block;font-size:.925rem;color:var(--fg-soft);margin-top:.15rem}
 .ff .sm{min-width:0;display:flex;flex-direction:column;gap:.6rem}
-.ff .sm-feature{display:grid;gap:2.5rem 2rem}
-.ff .sm-feature>*{min-width:0}
-@media (min-width:640px){.ff .sm-feature{grid-template-columns:repeat(2,minmax(0,1fr))}.ff .sm-roster{grid-column:1/-1}}
-@media (min-width:1100px){.ff .sm-feature{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:2.5rem}.ff .sm-roster{grid-column:auto}}
-.ff .sm-roster h3{padding-bottom:.9rem;border-bottom:1px solid var(--line-strong);font:600 .7rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--saddle)}
-.ff .sm-roster li{padding-block:1.1rem;border-bottom:1px solid var(--line)}
-.ff .sm-roster h4{margin:.35rem 0;font:400 1.45rem/1.15 var(--serif);color:var(--fg)}
-.ff .sm-roster li p:last-child{font-size:.925rem;color:var(--fg-soft)}
 .ff .sm .ph{aspect-ratio:4/5;margin-bottom:.5rem}
 .ff .sm-type,.ff .sm .sm-type{font:600 .7rem/1.35 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--saddle)}
 .ff .sm h3{font-size:1.6rem}
@@ -78,33 +70,26 @@ def horse(slug,name,typ,text):
         <p>{text}</p>
       </article>
 '''
-def roster(name,typ,text):
-    return f'''          <li>
-            <p class="sm-type">{typ}</p>
-            <h4>{name}</h4>
-            <p>{text}</p>
-          </li>
-'''
-horses=''.join([
+horses='    <div class="sm-grid">\n'+''.join([
 horse('chief','Chief','Pony of the Americas · 13.0 hands','The farm’s most popular lesson pony, and a steady partner for junior riders.'),
-horse('audrey','Princess Audrey','Welsh pony cross mare · 12.2 hands','With Denise since she was two, and shown at local and recognized shows. A small pony for junior riders ready to compete.'),
-])+'''      <section class="sm-roster" aria-labelledby="roster-title">
-        <h3 id="roster-title">Also in the program</h3>
-        <ul>
-'''+''.join([
-roster('Herman','Thoroughbred','Local show and foxhunting experience. Quiet enough for riders building confidence, with plenty to teach advanced riders.'),
-roster('Remi','Thoroughbred × Percheron','Big, quiet and steady. Looks after riders building their foundation and gives advanced riders a horse to refine their flatwork on.'),
-roster('Freddy','Welsh × Quarter Horse · Large pony','Local show and Pony Club experience. A favorite with junior and adult riders alike.'),
-])+'''        </ul>
-      </section>
-'''
+horse('audrey','Princess Audrey','Welsh pony cross mare · 12.2 hands','With Denise since she was two, and shown at local and recognized shows.'),
+horse('herman','Herman','Thoroughbred · <span class="tbd">height to confirm</span>','Local show and foxhunting experience. Quiet enough for riders building confidence.'),
+horse('remi','Remi','Thoroughbred × Percheron · <span class="tbd">height to confirm</span>','Big, quiet and steady. Gives advanced riders a horse to refine their flatwork on.'),
+horse('freddy','Freddy','Welsh × Quarter Horse · Large pony · <span class="tbd">height to confirm</span>','Local show and Pony Club experience. A favorite with junior and adult riders alike.'),
+])+'    </div>\n'
+
+BAND=band('images/rider-training-band.jpg','A lesson in the indoor arena at Forecast Farms','A lesson in the indoor arena, wide')
+GRID=pgrid('Lessons at Forecast Farms',[
+('images/rider-training-grid-1.jpg','A rider working on the flat','Flatwork: rhythm and straightness'),
+('images/rider-training-grid-2.jpg','A rider in a gymnastic grid','A gymnastic grid'),
+('images/rider-training-grid-3.jpg','A rider walking a course','Walking a course before a round')])
 
 body=f'''<main id="main">
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
     <p class="eyebrow">Rider Training</p>
-    <h1 id="hero-title">Riding skills <em>that work on any horse.</em></h1>
-    <p class="hero-text">Hunter, jumper and equitation lessons for junior and adult riders, on your own horse, a ship-in, or one of our schoolmasters. Each lesson builds on the last, toward goals we set with you.</p>
+    <h1 id="hero-title">Hunter, jumper and equitation lessons in <em>Marshall, Virginia.</em></h1>
+    <p class="hero-text">For junior and adult riders, on your own horse, a ship-in, or one of our schoolmasters. Each lesson builds on the last, toward goals we set with you.</p>
     <div class="hero-ctas">
       <a class="btn" href="{EVAL}">Schedule an Evaluation Lesson</a>
       <a class="btn btn-ghost" href="#schoolmasters">Meet the Schoolmasters</a>
@@ -222,12 +207,14 @@ body=f'''<main id="main">
   </div>
 </section>
 
+{BAND}
+
 <section id="work" class="section lilac" aria-labelledby="work-title">
   <div class="wrap">
     <header class="sec-head">
       <div>
         <p class="eyebrow">What we work on</p>
-        <h2 id="work-title">Basics before bigger jumps</h2>
+        <h2 id="work-title">What every lesson works on</h2>
       </div>
       <p class="lede">Every lesson works on the same four areas. How much time each one gets changes as you improve.</p>
     </header>
@@ -252,11 +239,13 @@ body=f'''<main id="main">
   </div>
 </section>
 
+{GRID}
+
 <section id="showing" class="section paper" aria-labelledby="show-title">
   <div class="wrap split">
     <div>
       <p class="eyebrow">Preparing to show</p>
-      <h2 id="show-title">Show when you and your horse are ready</h2>
+      <h2 id="show-title">Getting ready to show</h2>
       <p class="lede">Showing is optional. When you are both ready, show preparation becomes part of your lessons.</p>
     </div>
     <ul class="ticks">
@@ -273,13 +262,11 @@ body=f'''<main id="main">
     <header class="sec-head">
       <div>
         <p class="eyebrow">Our schoolmasters</p>
-        <h2 id="sm-title">No horse yet? Ride one of ours.</h2>
+        <h2 id="sm-title">Meet the schoolmasters</h2>
       </div>
-      <p class="lede">Our schoolmasters teach riders at every stage of the program. We match you with one after your evaluation lesson.</p>
+      <p class="lede">No horse yet? Five schoolmasters teach riders at every stage. We match you with one after your evaluation lesson.</p>
     </header>
-    <div class="sm-feature">
-{horses}    </div>
-  </div>
+{horses}  </div>
 </section>
 
 <section id="voice" class="section deep" aria-label="From a rider">
