@@ -59,6 +59,17 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 | 20 | One footer line naming nearby towns: Middleburg, The Plains, Warrenton, Upperville | Approved |
 | 21 | "Notes from the ring" page built from the Monday tip posts | Approved for later |
 
+## Testimonial bank decisions (Mich, 18 Nov 2026)
+
+| Topic | Decision | Owner |
+|---|---|---|
+| Testimonials on the site | Use only quotes that are in the testimonial bank, word for word. Credit stays "First name + initial, Google review" | Claude |
+| Quotes already on the site (4 on Home, 4 on inner pages) | Check each against the bank; any quote not in it comes off | Claude, once the bank's quote list is pasted in |
+| "Jane Smith, Middleburg, VA" placeholder on intro.forecastfarms.com | Take the page down. If it has to stay, remove the quote today. It is not in this repo | Mich / Denise (GHL) |
+| Facebook Page reviews | Turn on after launch | Denise |
+| LinkedIn recommendations (Joan Russo, Jay Tobias, 2011) | Ask each person before reusing; use Google reviews first | Mich / Denise |
+| 2★ Yelp review ("a place for beginners") | No website change; Denise may reply publicly. Year not in the pasted bank | Denise |
+
 ## Rule changes (replace the matching lines in COPY-BRIEF.md)
 
 | Rule before | Rule now |
