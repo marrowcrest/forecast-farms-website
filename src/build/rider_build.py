@@ -88,7 +88,7 @@ def roster(name,typ,text):
 horses=''.join([
 horse('chief','Chief','Pony of the Americas · 13.0 hands','The farm’s most popular lesson pony, and a steady partner for junior riders.'),
 horse('audrey','Princess Audrey','Welsh pony cross mare · 12.2 hands','With Denise since she was two, and shown at local and recognized shows. A small pony for junior riders ready to compete.'),
-])+'''      <aside class="sm-roster" aria-labelledby="roster-title">
+])+'''      <section class="sm-roster" aria-labelledby="roster-title">
         <h3 id="roster-title">Also in the program</h3>
         <ul>
 '''+''.join([
@@ -96,7 +96,7 @@ roster('Herman','Thoroughbred','Local show and foxhunting experience. Quiet enou
 roster('Remi','Thoroughbred × Percheron','Big, quiet and steady. Looks after riders building their foundation and gives advanced riders a horse to refine their flatwork on.'),
 roster('Freddy','Welsh × Quarter Horse · Large pony','Local show and Pony Club experience. A favorite with junior and adult riders alike.'),
 ])+'''        </ul>
-      </aside>
+      </section>
 '''
 
 body=f'''<main id="main">

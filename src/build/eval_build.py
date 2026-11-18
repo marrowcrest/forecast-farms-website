@@ -230,7 +230,7 @@ body=f'''<main id="main">
         </details>
       </div>
     </div>
-    <aside class="ev-visit" aria-labelledby="visit-title">
+    <section class="ev-visit" aria-labelledby="visit-title">
       <h3 id="visit-title">Visit the farm</h3>
       <p>We are on Atoka Road in Marshall, in Fauquier County hunt country.</p>
       <dl>
@@ -240,7 +240,7 @@ body=f'''<main id="main">
         <div><dt>Facilities</dt><dd>Indoor arena with rubberized footing and an outdoor all-weather ring</dd></div>
       </dl>
       <a class="link-arrow" href="{MAP}" target="_blank" rel="noopener">Get directions</a>
-    </aside>
+    </section>
   </div>
 </section>
 </main>'''
