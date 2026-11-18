@@ -17,26 +17,26 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 
 | # | Idea | Status |
 |---|---|---|
-| 1 | Show prices: the evaluation lesson and lesson rates ("from $X"). A placeholder for now | Approved, waiting on Denise |
-| 2 | Cut the form from 9 fields to 4: name, phone or email, who it's for (rider / horse / both), message | Approved |
-| 3 | Google rating near the top of the homepage, linked to the reviews. Shown only if it's above 4.7 | Approved, waiting on the rating |
+| 1 | Show prices: the evaluation lesson and lesson rates ("from $X"). A placeholder for now | Placeholders on Home (program cards, evaluation lesson); waiting on Denise |
+| 2 | Cut the form from 9 fields to 4: name, phone or email, who it's for (rider / horse / both), message | **Done** on the branch (Home and Schedule an Evaluation) |
+| 3 | Google rating near the top of the homepage, linked to the reviews. Shown only if it's above 4.7 | Built, hidden until the rating is set (see README); waiting on the rating |
 | 4 | One matched testimonial on every inner page (word for word, from the testimonial bank) | Approved |
 
 ## B. Structure
 
 | # | Idea | Status |
 |---|---|---|
-| 5 | Homepage from 11 sections to 7: top banner and facts strip, then programs, how the evaluation works, Denise, testimonials, who it's for, and the form. "Hunter, jumper or equitation" moves to Rider Training. The Sales section becomes a link | Approved |
+| 5 | Homepage from 11 sections to 7: top banner and facts strip, then programs, how the evaluation works, Denise, testimonials, who it's for, and the form. "Hunter, jumper or equitation" moves to Rider Training. The Sales section becomes a link | **Done** on the branch |
 | 6 | Inner pages: one full-width photo band, one large quote and one photo grid each, to break the repeated layout | Approved |
 | 7 | A "Meet the schoolmasters" gallery: photo, breed, size and one line for each of the five | Approved, needs photos |
 | 8 | A "New riders: start here" FAQ page: prices, lesson length, what to bring, schedule, cancellations | Approved, waiting on Denise |
-| 9 | A short note from Denise in her own voice, signed, on Home and About | Approved, Denise approves the text |
+| 9 | A short note from Denise in her own voice, signed, on Home and About | Draft on Home, marked as a draft; About next. Denise approves the text |
 
 ## C. Copy
 
 | # | Idea | Status |
 |---|---|---|
-| 10 | Headings say what and where, e.g. "Hunter, jumper and equitation lessons in Marshall, Virginia" | Approved |
+| 10 | Headings say what and where, e.g. "Hunter, jumper and equitation lessons in Marshall, Virginia" | Home and Rider Training's new section done; other inner pages next |
 | 11 | Specifics instead of general claims: years, named shows, named horses, the facilities | Approved; new facts confirmed by Denise first |
 | 12 | Finish the cleanup: banned words, italic headings (2 per page), two-beat headings | Approved |
 | 13 | Shorter body text: one or two sentences per section intro | Approved |
@@ -48,7 +48,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 | 14 | A half-day professional photo shoot: lessons, jumping, the barn, the schoolmasters, Denise teaching | Approved, to book |
 | 15 | Scroll-in fade, photo zoom on hover, card lift, arrow nudge, header shrink | **Done** on the branch (commit a2195f2) |
 | 16 | A 6–8 second silent video loop at the top of the homepage | Approved for later, after the shoot |
-| 17 | Visit section with a photo of the farm entrance and a "Get directions" button | Approved |
+| 17 | Visit section with a photo of the farm entrance and a "Get directions" button | **Done** on Home, with the barn photo until an entrance photo is shot |
 
 ## E. Google and tracking
 
@@ -75,6 +75,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 
 - Audit: visual review on desktop and phone, accessibility scan, link check, copy and SEO review
 - #15 effects, a full-screen phone menu, and the footer heading and landmark accessibility fixes (commit a2195f2)
+- Homepage rebuild: #5 (7 sections; disciplines moved to Rider Training; Sales is a link), #2, #17, and the Home parts of #1, #3, #9 and #10
 
 ## Questions for Denise
 
@@ -88,3 +89,5 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 8. **Her note (#9):** a few sentences in her own words, or approve a draft
 9. **Specifics (#11):** any facts to add, such as the indoor arena size, show results, how long each schoolmaster has been at the farm
 10. **Horses for sale:** the current list, or "ask us" for now
+11. **Homepage quotes:** are Jessica M., Jana, Richard I. and Beth P. Google reviews? They are credited by town today; the rule is "First name + initial, Google review"
+12. **Photo shoot (#14):** add the farm entrance (for the Visit block) and a jumper shot that isn't the Rider Training hero photo
