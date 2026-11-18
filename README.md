@@ -95,7 +95,7 @@ Landscape photos: at least 2000px wide. Portraits: at least 1200 × 1500px. Keep
 
 ## Google rating badge
 
-The homepage hero has a Google rating link that stays hidden until it is filled in. In `src/home.html`, find `class="g-rating"` and set `href` (the Google reviews link), `data-rating` (for example `4.9`) and `data-count` (number of reviews). It shows only when the rating is above 4.7.
+The homepage hero has a Google rating link that stays hidden until it is filled in. In `src/home.html`, find `class="g-rating"` and set `href` (the Google reviews link), `data-rating` (for example `4.9`) and `data-count` (number of reviews). It shows only when the rating is above 4.7. Current values: 5.0 from 10 reviews (testimonial bank, 6 Nov 2026), linked to a Google Maps search for the farm until the exact reviews link from the Google Business Profile is sent. Update the count when new reviews come in.
 
 ## Placeholders
 

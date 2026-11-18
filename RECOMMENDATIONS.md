@@ -19,7 +19,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 |---|---|---|
 | 1 | Show prices: the evaluation lesson and lesson rates ("from $X"). A placeholder for now | Placeholders on Home (program cards, evaluation lesson); waiting on Denise |
 | 2 | Cut the form from 9 fields to 4: name, phone or email, who it's for (rider / horse / both), message | **Done** on the branch (Home and Schedule an Evaluation) |
-| 3 | Google rating near the top of the homepage, linked to the reviews. Shown only if it's above 4.7 | Built, hidden until the rating is set (see README); waiting on the rating |
+| 3 | Google rating near the top of the homepage, linked to the reviews. Shown only if it's above 4.7 | **Done**: shows 5.0 from 10 reviews (testimonial bank, 6 Nov 2026). Needs the exact Google reviews link |
 | 4 | One matched testimonial on every inner page (word for word, from the testimonial bank) | Approved |
 
 ## B. Structure
@@ -84,7 +84,7 @@ Status record for the November 2026 review. Approved by Mich on 18 Nov 2026 ("ye
 3. **Lessons:** lesson length, weekly schedule, cancellation policy
 4. **What to bring:** confirm the list on the evaluation page (helmet standard, boots, gloves, Coggins and vaccinations for ship-ins, tack)
 5. **Photos:** moved to the Photos list below (Mich resolves last)
-6. **Google:** the current rating and number of reviews, and the review link
+6. **Google:** the exact reviews link from the Google Business Profile (rating 5.0 from 10 reviews is in the testimonial bank, 6 Nov 2026)
 7. **Testimonials:** Jana's last initial, and OK to credit quotes as "First name + initial, Google review"
 8. **Her note (#9):** a few sentences in her own words, or approve a draft
 9. **Specifics (#11):** any facts to add, such as the indoor arena size, show results, how long each schoolmaster has been at the farm
