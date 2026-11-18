@@ -49,14 +49,6 @@ LIB_CSS='''
 .ff .ticks li:last-child{border-bottom:1px solid var(--line)}
 .ff .ticks li::before{content:"";position:absolute;left:.1rem;top:1.25rem;width:.75rem;height:.4rem;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
 .ff .ticks li span{display:block;font-size:.925rem;color:var(--fg-soft);margin-top:.15rem}
-.ff .steps{display:grid;gap:2.5rem 2.5rem}
-.ff .step{min-width:0;padding-top:1.5rem;border-top:1px solid var(--line-strong)}
-.ff .step .n{display:grid;place-items:center;width:2.25rem;height:2.25rem;margin-bottom:1.25rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font:500 1.05rem/1 var(--serif)}
-.ff .step h3{margin-bottom:.75rem;font-size:clamp(1.45rem,1.3rem + .5vw,1.75rem)}
-.ff .step p{color:var(--fg-soft)}
-@media (min-width:700px){.ff .steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1100px){.ff .steps--3{grid-template-columns:repeat(3,minmax(0,1fr))}.ff .steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (min-width:700px) and (max-width:1099px){.ff .steps--3 .step:last-child{grid-column:1/-1}}
 .ff .quote-solo blockquote p{font:italic 350 clamp(1.8rem,1.3rem + 2vw,3rem)/1.18 var(--serif);letter-spacing:-.01em;text-wrap:balance;max-width:30ch;color:var(--fg)}
 .ff .quote-solo figcaption{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline}
 .ff .faq-list{border-bottom:1px solid var(--line)}
@@ -82,15 +74,6 @@ LIB_CSS='''
 .ff .sm-type,.ff .sm .sm-type{font:600 .7rem/1.35 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--saddle)}
 .ff .sm h3{font-size:1.6rem}
 .ff .sm p{font-size:.925rem;color:var(--fg-soft)}
-.ff .visit{padding:clamp(1.5rem,3vw,2.25rem);background:var(--surface);border-radius:2px}
-.ff .visit h3{font-size:1.6rem;margin-bottom:.5rem}
-.ff .visit>p{color:var(--fg-soft);font-size:.95rem}
-.ff .visit dl{margin-top:1.25rem;border-bottom:1px solid var(--line)}
-.ff .visit dl>div{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:1rem;padding-block:.75rem;border-top:1px solid var(--line)}
-.ff .visit dt{font:600 .7rem/1.7 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-soft)}
-.ff .visit dd{font-size:.95rem;color:var(--fg)}
-.ff .visit dd a{color:var(--fg);text-decoration-color:var(--line-strong);text-underline-offset:4px;overflow-wrap:anywhere}
-.ff .visit .link-arrow{margin-top:1.5rem}
 '''
 
 HOSTILE='<style>body{margin:0;font-family:Times;color:red}h2{color:blue}p{font-size:22px}.c-section{padding:40px 15px}.c-row{max-width:1170px;margin:0 auto;padding:0 15px}.c-el{overflow:hidden}</style>'

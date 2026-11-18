@@ -89,9 +89,17 @@ Landscape photos: at least 2000px wide. Portraits: at least 1200 × 1500px. Keep
 2. On each page: one full-width section with 0 padding, one Custom Code element, paste the whole file from `ghl/`. On a phone, check the sticky Book · Call · Text bar sits at the bottom of the screen (some GHL section settings can trap fixed elements).
 3. Photos: GHL pages cannot read this repo. Upload the full-size photos in `images/` (not the `-600`/`-800`/`-900`/`-1200` copies) to GHL Media Storage, paste each URL into `images/ghl-urls.json` as `{"rider-training.jpg": "https://assets.cdn.filesafe.space/…"}`, and rebuild. The build swaps the URLs into `ghl/` and serves phone-sized versions through GHL's own image service (`images.leadconnectorhq.com`), the same one the GHL site builder uses. If that service ever fails, each photo falls back to the original.
 4. Website settings, body (footer) tracking code: the GHL External Tracking script, once, site-wide.
-5. Custom fields: Rider Type, Horse Status, Jumping Level, Training Interest, Goals, SMS Consent.
+5. Form fields: the evaluation form sends `full_name`, `email` or `phone` (from the one "Phone or email" box), and the custom fields Training For (`training_for`: Rider, Horse, or Horse and rider), Message (`message`), Training Interest (`training_interest`, filled in from the program page the visitor came from) and SMS Consent (`sms_consent`).
 6. Test the forms on Home and Schedule an Evaluation; check Sites > Forms > Submissions > External Forms.
 7. Before launch: attorney review of the Privacy Policy and Terms.
+
+## Google rating badge
+
+The homepage hero has a Google rating link that stays hidden until it is filled in. In `src/home.html`, find `class="g-rating"` and set `href` (the Google reviews link), `data-rating` (for example `4.9`) and `data-count` (number of reviews). It shows only when the rating is above 4.7. Current values: 5.0 from 10 reviews (testimonial bank, 6 Nov 2026), linked to a Google Maps search for the farm until the exact reviews link from the Google Business Profile is sent. Update the count when new reviews come in.
+
+## Placeholders
+
+Dashed labels such as "Price to confirm" (`class="tbd"`) and "Draft: waiting for Denise's approval" (`class="draft-tag"`) mark content waiting on Denise. Replace each one before launch.
 
 ## Open items
 

@@ -262,7 +262,7 @@ bio='''<section id="denise" class="section paper" aria-labelledby="denise-title"
     </div>
   </div>
 </section>'''
-visit='''    <aside class="visit" aria-labelledby="visit-title">
+visit='''    <section class="visit" aria-labelledby="visit-title">
       <h3 id="visit-title">Visit the farm</h3>
       <p>Come for an evaluation lesson to see the farm and ride with Denise.</p>
       <dl>
@@ -271,7 +271,7 @@ visit='''    <aside class="visit" aria-labelledby="visit-title">
         <div><dt>Email</dt><dd><a href="mailto:info@forecastfarms.com">info@forecastfarms.com</a></dd></div>
       </dl>
       <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=2497+Atoka+Rd+Marshall+VA+20115" target="_blank" rel="noopener">Get directions</a>
-    </aside>'''
+    </section>'''
 body='\n\n'.join([
 hero('About Forecast Farms','A family farm in <em>Virginia hunt country.</em>',
  'Forecast Farms is a family-owned Hunter, Jumper and Equitation program on Atoka Road in Marshall, led by trainer Denise Finch. For more than 35 years, the farm has trained riders and horses with the same priorities: safety first, then the development of horse and rider together.',
