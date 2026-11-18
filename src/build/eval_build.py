@@ -70,14 +70,16 @@ page_js='''<script>
 (()=>{
 const HOME='/';
 if(HOME!=='/'){document.querySelectorAll('.ff a[href^="/#"]').forEach(a=>a.setAttribute('href',HOME+a.getAttribute('href').slice(1)));document.querySelectorAll('.ff a[href="/"]').forEach(a=>a.setAttribute('href',HOME));}
-const map={'rider-training':'Rider Training','horse-training':'Horse Training','horse-rider-development':'Horse + Rider Development','horse-search':'Horse search, sales or leasing','junior-riding-club':'Junior Riding Club (ages 4–7)'};
+const map={'rider-training':['Rider Training','Rider'],'horse-training':['Horse Training','Horse'],'horse-rider-development':['Horse + Rider Development','Horse and rider'],'horse-search':['Horse search, sales or leasing',''],'junior-riding-club':['Junior Riding Club (ages 4–7)','Rider']};
 let v=null;try{v=new URLSearchParams(location.search).get('interest');}catch(e){}
-const sel=document.getElementById('f-interest');
-if(v&&sel&&map[v])sel.value=map[v];
+const m=v&&map[v],h=document.getElementById('f-interest');
+if(m&&h)h.setAttribute('value',m[0]);
+const r=m&&m[1]&&document.querySelector('#eval-form input[name="training_for"][value="'+m[1]+'"]');
+if(r)r.checked=r.defaultChecked=true;
 })();
 </script>'''
 
-MAP='https://www.google.com/maps/search/?api=1&query=2497+Atoka+Rd+Marshall+VA+20115'
+MAP='https://www.google.com/maps/dir/?api=1&amp;destination=2497+Atoka+Rd+Marshall+VA+20115'
 body=f'''<main id="main">
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
@@ -214,7 +216,7 @@ body=f'''<main id="main">
         </details>
         <details>
           <summary>I want training for my horse. How does that start?</summary>
-          <p>The same way. Choose Horse Training in the form and tell us about your horse’s age, experience and goals. We will arrange the best way to assess the horse.</p>
+          <p>The same way. Choose “A horse” in the form and tell us about your horse’s age, experience and goals. We will arrange the best way to assess the horse.</p>
         </details>
         <details>
           <summary>How much does the evaluation cost?</summary>
