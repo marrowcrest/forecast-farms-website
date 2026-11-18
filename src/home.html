@@ -365,6 +365,15 @@ html.ff-lock{overflow:hidden}
 .ff .visit dd{font-size:.95rem;color:var(--fg)}
 .ff .visit dd a{color:var(--fg);text-decoration-color:var(--line-strong);text-underline-offset:4px;overflow-wrap:anywhere}
 .ff .visit .link-arrow,.ff .visit .btn{margin-top:1.5rem}
+.ff .pgrid{display:grid;gap:clamp(.5rem,1vw,.9rem);grid-template-columns:repeat(2,minmax(0,1fr))}
+.ff .pgrid .ph{aspect-ratio:4/5;margin:0}
+.ff .pgrid .ph:first-child{grid-column:1/-1;aspect-ratio:3/2}
+@media (min-width:800px){.ff .pgrid{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr)}.ff .pgrid .ph:first-child{grid-column:auto;aspect-ratio:auto}}
+.ff .sm-grid{display:grid;gap:2.5rem 1.25rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:900px){.ff .sm-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem 1.75rem}}
+@media (min-width:1200px){.ff .sm-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.ff .sm-grid .sm h3{font-size:clamp(1.3rem,1.15rem + .5vw,1.6rem)}
+.ff .quote-solo .tbd{margin-bottom:1.5rem}
 .ff .field--choice{border:0;margin:0;padding:0}
 .ff .field--choice legend{padding:0;margin-bottom:.4rem;font-size:.8125rem;font-weight:600;letter-spacing:.02em}
 .ff .choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
